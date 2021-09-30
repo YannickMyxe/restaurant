@@ -1,2 +1,1 @@
-# restaurant
-co-working
+# Co-workings project: restaurant
