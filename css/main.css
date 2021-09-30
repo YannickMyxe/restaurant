@@ -8,7 +8,7 @@
     --cl-primary-900: #0a2239;
 }
 
-img{
-    opacity: 100%;  
-    background: #000; 
+.logo
+{
+    width: 10rem;
 }
