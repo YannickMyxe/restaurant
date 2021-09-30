@@ -9,6 +9,29 @@
 }
 
 img{
-    opacity: 100%;  
-    background: #000; 
+    width: 23.5rem;
+    opacity: 100%;
+    background: transparent;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 40px;
+    padding-bottom: 50px;
+    z-index: 999;
+    background-color: #0a2239;
+}
+
+.navbar__menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.navbar__link{
+    padding: 20px;
+    font-size: 1rem;
 }
