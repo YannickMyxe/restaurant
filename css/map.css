@@ -1,11 +1,18 @@
+@import url('vars.css');
 
 .map-wrapper
 {
-    border: 1px solid green;
-    margin-bottom: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-flow: row;
+    gap: 0rem;
+    flex-wrap: wrap;
 }
 
 .map
 {
-    
+    padding: 0.25rem;
+    background: var(--cl-primary-900);
+    border-radius: 13px;
+    min-width: 25rem;
 }
