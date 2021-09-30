@@ -37,7 +37,9 @@
     flex: 1 1 200px
 }
 
-.menu h1, h2, h3
+.menu h1, 
+.menu h2, 
+.menu h3
 {
     color: #fff;
 }

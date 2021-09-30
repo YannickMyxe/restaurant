@@ -1,5 +1,11 @@
 @import url('vars.css');
 
+.location>h2
+{
+    margin: 5rem 0 0 1rem;
+    padding: 0;
+}
+
 .map-wrapper
 {
     margin: 1rem;
