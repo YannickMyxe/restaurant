@@ -3,6 +3,7 @@
 body
 {
     font-family: sans-serif;
+    font-size: 1rem;
 }
 
 img{
@@ -16,8 +17,8 @@ img{
     display: flex;
     flex-direction: row;
     width: auto;
-    height: 40px;
-    padding-bottom: 50px;
+    height: 2rem;
+    padding-bottom: 1rem;
     z-index: 999;
     background-color: #0a2239;
 }
@@ -25,12 +26,14 @@ img{
 .navbar>ul{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: end;
     list-style: none;
+    flex: 1 1 1rem;
+    gap: 1em;
 }
 
 .navbar>ul>li>a{
-    padding: 20px;
+    padding: 1rem;
     font-size: 1rem;
     color: #fff;
 }
