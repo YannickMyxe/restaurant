@@ -1,0 +1,14 @@
+:root
+{
+
+    --cl-primary-300: #176087;
+    --cl-primary-400: #176087;
+    --cl-primary-600: #176087;
+    --cl-primary-800: #132e32;
+    --cl-primary-900: #0a2239;
+}
+
+img{
+    opacity: 100%;  
+    background: #000; 
+}
