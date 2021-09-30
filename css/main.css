@@ -9,9 +9,10 @@
 }
 
 img{
-    width: 23.5rem;
+    width: 15rem;
     opacity: 100%;
     background: transparent;
+    border: 1px solid rebeccapurple;
 }
 
 .navbar{
