@@ -1,0 +1,21 @@
+
+.menu
+{
+    border: 1px solid red;
+}
+
+.menu-wrapper
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.menu-item
+{
+    border: 1px solid blue;
+    min-width: 25rem;
+    width: 30rem;
+}
