@@ -7,6 +7,7 @@ Overzicht co-workingsproject: restaurant.
 * Collor palette: https://coolors.co/0a2239-53a2be-1d84b5-132e32-176087
 * Learning git: https://learngitbranching.js.org/
 * Google maps: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#maps_add_map-html
+* Contentful: https://www.contentful.com/
 
 ## Instructies git
 1. add files to Staged Changes
