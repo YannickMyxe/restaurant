@@ -18,9 +18,9 @@ img{
     flex-direction: row;
     width: auto;
     height: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.2rem;
     z-index: 999;
-    background-color: #0a2239;
+    background-color: var(--cl-primary-900);
 }
 
 .navbar>ul{
@@ -35,7 +35,12 @@ img{
 .navbar>ul>li>a{
     padding: 1rem;
     font-size: 1rem;
-    color: #fff;
+    color: #eee;
+}
+
+.navbar a:hover
+{
+    background-color: var(--cl-primary-200);
 }
 
 .center
