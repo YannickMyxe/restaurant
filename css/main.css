@@ -5,6 +5,12 @@ header{
     position: sticky;
 }
 
+main
+{
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
 body
 {
     font-family: sans-serif;
