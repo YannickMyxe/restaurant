@@ -63,3 +63,9 @@ h2
 {
     font-size: 2rem;
 }
+
+main
+{
+    max-width: 1000px;
+    margin: 0 auto;
+}
