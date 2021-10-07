@@ -1,0 +1,24 @@
+@import url('vars.css');
+
+.location>h2
+{
+    margin: 5rem 0 0 1rem;
+    padding: 0;
+}
+
+.map-wrapper
+{
+    margin: 1rem;
+    display: flex;
+    flex-flow: row;
+    gap: 0rem;
+    flex-wrap: wrap;
+}
+
+.map
+{
+    padding: 0.25rem;
+    background: var(--cl-primary-900);
+    border-radius: 13px;
+    min-width: 25rem;
+}
