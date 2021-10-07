@@ -21,4 +21,7 @@
     background: var(--cl-primary-900);
     border-radius: 13px;
     min-width: 25rem;
+    width: 60vw;
+    height: 40vw;
+    margin: 0 auto;
 }
