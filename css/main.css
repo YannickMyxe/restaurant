@@ -1,14 +1,64 @@
-:root
-{
+@import url('vars.css');
 
-    --cl-primary-300: #176087;
-    --cl-primary-400: #176087;
-    --cl-primary-600: #176087;
-    --cl-primary-800: #132e32;
-    --cl-primary-900: #0a2239;
+body
+{
+    font-family: sans-serif;
+    font-size: 1rem;
 }
 
 img{
-    opacity: 100%;  
-    background: #000; 
+    width: 15rem;
+    opacity: 100%;
+    background: transparent;
+    border: 1px solid rebeccapurple;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 2rem;
+    padding-bottom: 1.2rem;
+    z-index: 999;
+    background-color: var(--cl-primary-900);
+}
+
+.navbar>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    list-style: none;
+    flex: 1 1 1rem;
+    gap: 1em;
+}
+
+.navbar>ul>li>a{
+    padding: 1rem;
+    font-size: 1rem;
+    color: #eee;
+}
+
+.navbar a:hover
+{
+    background-color: var(--cl-primary-200);
+}
+
+.center
+{
+    text-align: center;
+}
+
+.content
+{
+    margin-left: 1rem;
+}
+
+h1
+{
+    font-size: 4rem;
+}
+
+h2
+{
+    font-size: 2rem;
 }
