@@ -44,6 +44,7 @@ img{
     list-style: none;
     flex: 1 1 1rem;
     gap: 1em;
+    flex-wrap: wrap;
 }
 
 .navbar>ul>li{
