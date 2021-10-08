@@ -55,11 +55,23 @@ img{
     padding: 0.75rem;
     font-size: 1rem;
     color: #eee;
+    text-decoration: none;
+    transition: all 500ms ease-out;
 }
 
 .navbar a:hover:not(.logo)
 {
-    background-color: var(--cl-primary-200);
+    background-color: var(--cl-primary-100);
+    box-shadow: 3px 3px 3px var(--cl-primary-700);
+    color: var(--cl-primary-800);
+
+    border-radius: 12px;
+    transition: all 500ms ease-in;
+}
+
+.navbar .current-page
+{
+    border-bottom: 1px solid var(--cl-primary-100);
 }
 
 .center
