@@ -14,14 +14,20 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="navbar">
+        <nav class="navbar">
+            <div class="navbar__container">
                 <a class="logo" href="/"><img src="./img/logo.png" alt="LOGO"></a>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="https://github.com/YannickMyxe/restaurant">Project</a></li>
-                    <li><a href="">Contact</a></li>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <ul class="navbar__menu">
+                    <li class="navbar__item"><a class="navbar__links href="/">Home</a></li>
+                    <li class="navbar__item"><a class="navbar__links href="/about/">About</a></li>
+                    <li class="navbar__item"><a class="navbar__links href="https://github.com/YannickMyxe/restaurant">Project</a></li>
+                    <li class="navbar__item"><a class="navbar__links href="">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -106,5 +112,6 @@
     <footer class="center">
         Copyright &copy; Restaurant Multicultura - Gebroeders de Smetstraat 1, 9000 Gent | est 2021
     </footer>
+<script src="script.js"></script>
 </body>
 </html>
