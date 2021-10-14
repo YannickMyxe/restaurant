@@ -192,6 +192,13 @@ footer{
     color: #eee;
 }
 
+input{
+    display: block;
+}
+
+input[type=radio]{
+    display: block;
+}
 
 .button
 {
