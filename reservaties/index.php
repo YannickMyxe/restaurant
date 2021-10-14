@@ -98,15 +98,15 @@ if (isset($_POST['btnSubmit'])) {
             <p>You have a question or want to work together? ... get in contact!</p>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <label for="name" id="name">Your name: </label>
-                <input name="name" id="name" class="text" type="text" placeholder="Enter your name..." value="<?php echo htmlentities($name); ?>">
+                <input name="name" id="name" class="text" type="text" value="<?php echo htmlentities($name); ?>">
                 <span class="message error"><?php echo $msgName; ?></span>
 
                 <label for="email">Your e-mail: </label>
-                <input name="email" id="email" class="text" type="email" placeholder="Enter your e-mail adress..." value="<?php echo htmlentities($email); ?>">
+                <input name="email" id="email" class="text" type="email" value="<?php echo htmlentities($email); ?>">
                 <span class="message error"><?php echo $msgEmail; ?></span>
 
                 <label for="message">Your message</label>
-                <textarea name="message" id="message" class="text" placeholder="Enter your message here..."><?php echo htmlentities($message); ?></textarea>
+                <textarea name="message" id="message" class="text"><?php echo htmlentities($message); ?></textarea>
                 <span class="message error"><?php echo $msgMessage; ?></span>
 
                 <label class="radiotitle">How did you find me?</label>
