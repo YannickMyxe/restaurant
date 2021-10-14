@@ -191,3 +191,22 @@ footer{
     align-items: center;
     color: #eee;
 }
+
+
+.button
+{
+    display: block;
+    border: 1px solid #919191;
+    background-color: #d1d1d1;
+    padding: 0.5em 1em;
+    width: max-content;
+    margin-top: 1em;
+    text-decoration: none;
+    color: #333;    
+    transition: background-color 500ms ease;
+}
+
+.button:hover
+{
+    background-color: rgba(255, 119, 0, 0.50);
+}
