@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `reservaties` (
 INSERT INTO `reservaties` (`ID`, `naam`, `aantal`, `datum`, `opmerking`, `added_on`) VALUES
 (1, 'Yannick', 1, '2021-10-22 12:20:00', '', '2021-10-14 16:08:29'),
 (2, 'Dylan_bot', 5, '2021-10-22 18:00:00', 'Nee, fuck off, OOF!', '2021-10-14 16:09:11'),
-(3, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 1, '2021-10-14 11:11:00', '', '2021-10-14 16:14:44'),
+(3, 'aaaaaaa', 1, '2021-10-14 11:11:00', '', '2021-10-14 16:14:44'),
 (4, 'dylan_bot', 12, '2021-10-01 15:10:00', 'geen opmerking toegevoegd', '2021-10-14 16:16:35');
 COMMIT;
 
