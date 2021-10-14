@@ -34,7 +34,7 @@ function getTime() {
 
 // Gets the first message
 function firstBotMessage() {
-    let firstMessage = "Hallo, wat kan ik voor u doen?"
+    let firstMessage = "Hallo, wat kan ik voor u doen? Type: 'help' om alle commando's te zien";
     document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
 
     let time = getTime();
@@ -88,9 +88,10 @@ function buttonSendText(sampleText) {
 function sendButton() {
     getResponse();
 }
-
+let heart_teller = 0;
 function heartButton() {
-    buttonSendText("Hart ingedrukt!")
+    heart_teller = heart_teller + 1;
+    buttonSendText(`Al ${heart_teller} hartjes verstuurd`)
 }
 
 $("#textInput").keypress(function (e) {
