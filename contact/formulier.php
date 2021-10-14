@@ -90,7 +90,7 @@ if (isset($_POST['btnSubmit'])) {
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <label for="naam">Uw naam</label>
         <input id="naam" type="text">
-
+        
         <label for="geslacht">Geslacht</label>
         <input id="geslacht" name="gl" type="radio">Man
         <input id="geslacht" name="gl" type="radio">Vrouw
