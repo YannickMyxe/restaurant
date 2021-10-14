@@ -191,3 +191,11 @@ footer{
     align-items: center;
     color: #eee;
 }
+
+input{
+    display: block;
+}
+
+input[type=radio]{
+    display: block;
+}
