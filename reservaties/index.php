@@ -93,9 +93,9 @@ if (isset($_POST['btnSubmit'])) {
 </head>
 <body>
     <main>
-        <div class="contact">
-            <h1>Contact</h1>
-            <p>You have a question or want to work together? ... get in contact!</p>
+        <div class="reservaties">
+            <h1>Reservaties!</h1>
+            <p></p>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <label for="name" id="name">Your name: </label>
                 <input name="name" id="name" class="text" type="text" value="<?php echo htmlentities($name); ?>">
