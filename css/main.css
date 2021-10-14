@@ -17,6 +17,7 @@ body
 {
     font-family: 'Hind Madurai', sans-serif;
     font-size: 1rem;
+    background: #fff;
 }
 
 img{
@@ -141,6 +142,7 @@ img{
         top: 20%;
         right: 5%;
         transform: translate(5%, 20%);
+        width: 100%;
     }
 
     .navbar__toggle .bar{
@@ -202,6 +204,8 @@ input[type=radio]{
     display: block;
 }
 
+
+
 .button
 {
     display: block;
@@ -217,8 +221,22 @@ input[type=radio]{
 
 .button:hover
 {
-    background-color: rgba(255, 119, 0, 0.50);
+    background-color: var(--cl-primary-100);
 }
+
+button
+{
+    padding: 1em;
+    border-radius: 3px;
+    border: 1px solid var(--cl-primary-800);
+}
+
+button:hover
+{
+    background-color: var(--cl-primary-100);
+    border-radius: 3px;
+}
+
 .error
 {
     color: red;
@@ -235,15 +253,3 @@ textarea
     margin-bottom: 1.5em;
 }
 
-button
-{
-    padding: 1em;
-    border-radius: 3px;
-    border: 1px solid var(--cl-primary-800);
-}
-
-button:hover
-{
-    background-color: var(--cl-primary-100);
-    border-radius: 3px;
-}
