@@ -45,17 +45,17 @@ if (isset($_POST['btnSubmit'])) {
         $msgAmount = 'Gelieve het aantal personen mee te geven voor uw reservatie';
         $allOk = false;
     }
+
     if (trim($date) === '') {
         $msgDate = 'Gelieve een datum in te geven';
         $allOk = false;
     }
-    if (trim($message) === '') {
-        $message = "geen opmerking toegevoegd";
-    }
-    
 
     // end of form check. If $allOk still is true, then the form was sent in correctly
     if ($allOk) {
+        if (trim($message) === '') {
+            $message = "geen opmerking toegevoegd";
+        }
         // build & execute prepared statement
         $stmt = $db->prepare('INSERT INTO reservaties (naam, aantal, datum, opmerking, added_on) VALUES (?, ?, ?, ?, ?)');
         $stmt->execute(array($name, $amount, $date, $message, (new DateTime())->format('Y-m-d H:i:s')));
