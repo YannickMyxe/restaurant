@@ -22,7 +22,7 @@ function getBotResponse(input) {
         return "Ik spreek je later!";
     } else if (input == "waar kan ik het menu vinden?") {
         return "Het menu is te vinden op: navigatie>home."
-    } else if (input == "ik hou van restaurant Multicultura!") {
+    } else if (input == "ik hou van restaurant multicultura!") {
         return "Ik ook! Bedankt dat je zo van ons restaurant houd!"
     } else {
         return "Probeer iets anders te vragen!";
