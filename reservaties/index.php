@@ -95,20 +95,17 @@ if (isset($_POST['btnSubmit'])) {
     <main>
         <div class="reservaties">
             <h1>Reservaties!</h1>
-            <p></p>
+            <p>Welkom bij het reservatie menu, gelieve dit formulier in te vullen.</p>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <label for="name" id="name">Your name: </label>
+                <label for="name" id="name">Jouw naam: </label>
                 <input name="name" id="name" class="text" type="text" value="<?php echo htmlentities($name); ?>">
                 <span class="message error"><?php echo $msgName; ?></span>
 
-                <label for="email">Your e-mail: </label>
+                <label for="email">Emailadres: </label>
                 <input name="email" id="email" class="text" type="email" value="<?php echo htmlentities($email); ?>">
                 <span class="message error"><?php echo $msgEmail; ?></span>
 
-                <label for="message">Your message</label>
-                <textarea name="message" id="message" class="text"><?php echo htmlentities($message); ?></textarea>
-                <span class="message error"><?php echo $msgMessage; ?></span>
-
+                
                 <label class="radiotitle">How did you find me?</label>
                 <input type="radio" id="friends" name="radio-findme" value="friends" <?php if(isset($_POST['radio-findme']) && $_POST['radio-findme'] === 'friends'){echo 'checked';}?>>
                 <label for="friends">Friends</label><br>
@@ -120,6 +117,9 @@ if (isset($_POST['btnSubmit'])) {
                 <p>
                     <button type="submit" id="btnSubmit" name="btnSubmit">Send your message</button>
                 </p>
+                <label for="message">Heb je nog opmerkingen?</label>
+                <textarea name="message" id="message" class="text"><?php echo htmlentities($message); ?></textarea>
+                <span class="message error"><?php echo $msgMessage; ?></span>
             </form>
         </div>
     </main>
