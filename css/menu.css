@@ -64,3 +64,8 @@
     padding: 0;
     margin: 0;
 }
+
+.leftalign
+{
+    padding-left: 1em;
+}
