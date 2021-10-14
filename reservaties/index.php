@@ -88,6 +88,26 @@ if (isset($_POST['btnSubmit'])) {
     <link rel="icon" href="img/logo.png">
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a class="logo" href="../"><img src="../img/logo.png" alt="LOGO"></a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <ul class="navbar__menu">
+                    <li class="navbar__item"><a class="navbar__links" href="../">Home</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../reservaties/">Reserveren</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../about/">About</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../contact/">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <main>
         <div class="reservaties">
             <h1>Reservaties!</h1>
