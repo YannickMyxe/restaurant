@@ -8,7 +8,7 @@ ini_set('display_errors', 1);
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'portfolio_yannick');
+define('DB_NAME', 'multicultura');
 
 date_default_timezone_set('Europe/Brussels');
 
@@ -85,10 +85,10 @@ if (isset($_POST['btnSubmit'])) {
     <link rel="stylesheet" href="/static/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/menu.css">
-    <link rel="stylesheet" href="/css/map.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/map.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="icon" href="img/logo.png">
 </head>
 <body>
