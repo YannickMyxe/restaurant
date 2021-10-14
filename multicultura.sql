@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 14 okt 2021 om 13:25
+-- Gegenereerd op: 14 okt 2021 om 14:19
 -- Serverversie: 5.7.31
 -- PHP-versie: 7.3.21
 
@@ -71,8 +71,19 @@ CREATE TABLE IF NOT EXISTS `reservaties` (
   `aantal` int(11) NOT NULL,
   `datum` datetime NOT NULL,
   `opmerking` varchar(255) DEFAULT 'Geen opmerkingen meegeven',
+  `added_on` datetime NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `reservaties`
+--
+
+INSERT INTO `reservaties` (`ID`, `naam`, `aantal`, `datum`, `opmerking`, `added_on`) VALUES
+(1, 'Yannick', 1, '2021-10-22 12:20:00', '', '2021-10-14 16:08:29'),
+(2, 'Dylan_bot', 5, '2021-10-22 18:00:00', 'Nee, fuck off, OOF!', '2021-10-14 16:09:11'),
+(3, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 1, '2021-10-14 11:11:00', '', '2021-10-14 16:14:44'),
+(4, 'dylan_bot', 12, '2021-10-01 15:10:00', 'geen opmerking toegevoegd', '2021-10-14 16:16:35');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
