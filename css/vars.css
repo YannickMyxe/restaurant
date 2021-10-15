@@ -1,6 +1,6 @@
 :root
 {
-    --width: 1000px;
+    --width: 1250px;
 
 
     --cl-primary-100: #cfeaf8;
@@ -9,6 +9,6 @@
     --cl-primary-500: #176087;
     --cl-primary-600: #176087;
     --cl-primary-700: #176087;
-    --cl-primary-800: #132e32;
+    --cl-primary-800: #101d35;
     --cl-primary-900: #0a2239;
 }

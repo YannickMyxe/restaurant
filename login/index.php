@@ -21,9 +21,9 @@ try {
     exit;
 }
 
-$name = isset($_POST['name']) ? (string)$_POST['name'] : '';
+$username = isset($_POST['username']) ? (string)$_POST['username'] : '';
 $message = isset($_POST['message']) ? (string)$_POST['message'] : '';
-$amount = isset($_POST['aantal']) ? (string)$_POST['aantal'] : '1';
+$amount = isset($_POST['password']) ? (string)$_POST['password'] : '1';
 $date = isset($_POST['datum']) ? (string)$_POST['datum'] : '';
 
 $msgName = '';
@@ -36,13 +36,13 @@ if (isset($_POST['btnSubmit'])) {
 
     $allOk = true;
 
-    // name not empty
-    if (trim($name) === '') {
+    // username not empty
+    if (trim($username) === '') {
         $msgName = 'Gelieve uw naam in te geven';
         $allOk = false;
     }
     if (trim($amount) === '') {
-        $msgAmount = 'Gelieve het aantal personen mee te geven voor uw reservatie';
+        $msgAmount = 'Gelieve het password personen mee te geven voor uw reservatie';
         $allOk = false;
     }
 
@@ -57,12 +57,12 @@ if (isset($_POST['btnSubmit'])) {
             $message = "geen opmerking toegevoegd";
         }
         // build & execute prepared statement
-        $stmt = $db->prepare('INSERT INTO reservaties (naam, aantal, datum, opmerking, added_on) VALUES (?, ?, ?, ?, ?)');
-        $stmt->execute(array($name, $amount, $date, $message, (new DateTime())->format('Y-m-d H:i:s')));
+        $stmt = $db->prepare('INSERT INTO reservaties (naam, password, datum, opmerking, added_on) VALUES (?, ?, ?, ?, ?)');
+        $stmt->execute(array($username, $amount, $date, $message, (new DateTime())->format('Y-m-d H:i:s')));
 
         // the query succeeded, redirect to this very same page
         if ($db->lastInsertId() !== 0) {
-            header('Location: bedankt_reservatie.php?name=' . urlencode($name));
+            header('Location: bedankt_reservatie.php?username=' . urlencode($username));
             exit();
         } // the query failed
         else {
@@ -72,34 +72,37 @@ if (isset($_POST['btnSubmit'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservaties | Multicultura</title>
+    <meta username="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login | Multicultura</title>
+    <link rel="stylesheet" href="../static/chat.css">
+    <link rel="stylesheet" href="../static/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/map.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="../img/logo.png">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="navbar__container">
-                <a class="logo" href="../"><img src="../img/logo.png" alt="LOGO"></a>
+                <a class="logo" href="./"><img src="../img/logo.png" alt="LOGO"></a>
                 <div class="navbar__toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
-
                 <ul class="navbar__menu">
                     <li class="navbar__item"><a class="navbar__links" href="../">Home</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="./">Login</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../reservaties/">Reserveren</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../about/">About</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project</a></li>
@@ -109,35 +112,24 @@ if (isset($_POST['btnSubmit'])) {
         </nav>
     </header>
     <main>
-        <div class="reservaties">
-            <h1>Reservaties!</h1>
-            <p>Welkom bij het reservatie menu, gelieve dit formulier in te vullen.</p>
+    <div class="login">
+        <h1>Login!</h1>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <div class="form-item">
-                    <label for="name" id="name">Jouw naam</label>
-                    <input name="name" id="name" class="text" type="text" maxlength="100" value="<?php echo htmlentities($name); ?>">
+                    <label for="username" id="username">Accountnaam</label>
+                    <input username="username" id="username" class="text" type="text" maxlength="100" value="<?php echo htmlentities($username); ?>">
                     <span class="message error"><?php echo $msgName; ?></span>
                 </div>
 
                 <div class="form-item">
-                    <label for="aantal">Aantal personen</label>
-                    <input type="number" name="aantal" id="aantal" min="1" max="20" value="<?php echo htmlentities($amount); ?>">
+                    <label for="password">Wachtwoord</label>
+                    <input type="password" username="password" id="password">
                     <span class="message error"><?php echo $msgAmount; ?></span>
                 </div>
-
-                <div class="form-item">
-                    <label for="datum">Datum reservatie</label>
-                    <input type="datetime-local" name="datum" id="datum" value="<?php echo htmlentities($date); ?>">
-                    <span class="message error"><?php echo $msgDate; ?></span>
-                </div>
-
-                <div class="form-item">
-                    <label for="message">Heb je nog opmerkingen?</label>
-                    <textarea name="message" id="message" class="text"><?php echo htmlentities($message); ?></textarea>
-                    <span class="message error"><?php echo $msgMessage; ?></span>
-                </div>
-
-                <p><button type="submit" id="btnSubmit" name="btnSubmit">Send your message</button></p>
+                <p>
+                    <button type="submit" id="btnSubmit" username="btnSubmit" class="button btnlogin">Login</button>
+                    <a href="../register/" class="button btnregistreer">Maak een account aan</a>
+                </p>
             </form>
         </div>
     </main>
@@ -146,4 +138,3 @@ if (isset($_POST['btnSubmit'])) {
     </footer>
 </body>
 </html>
-

@@ -1,0 +1,22 @@
+
+.login
+{
+    background-color: var(--cl-primary-900);
+    padding: 3em;
+    margin: 5em auto;
+    width: 50%;
+    color: #eee;
+}
+
+.btnregistreer,
+.btnlogin
+{
+    background-color: var(--cl-primary-100);
+}
+
+.btnlogin:hover,
+.btnregistreer:hover
+{
+    background-color: var(--cl-primary-900);
+    color: var(--cl-primary-100);
+}
