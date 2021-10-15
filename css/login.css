@@ -4,7 +4,7 @@
     background-color: var(--cl-primary-900);
     padding: 3em;
     margin: 5em auto;
-    width: 50%;
+    width: var(--width);
     color: #eee;
 }
 
