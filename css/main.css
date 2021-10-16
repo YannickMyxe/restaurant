@@ -166,6 +166,45 @@ img{
     text-align: center;
 }
 
+.container {
+	margin: 0 auto;
+	padding: 0 1rem;
+	max-width: 1280px;
+}
+
+/* form-fields */
+/* zie demo bestanden bij de theorie voor meer CSS ;) */
+input:not([type=submit]),
+textarea {
+	display: block;
+	width: 100%;
+	max-width: 40rem;
+	padding: .75em;
+	border: 1px solid #666;
+	border-radius: .3rem;
+}
+
+label,
+input[type=submit] {
+	margin-top: 3rem;
+}
+input[type=submit] {
+	padding: .5em 2em;
+}
+
+label {
+	display: block;
+	margin-bottom: .2em;
+	font-weight: bold;
+}
+
+.message {
+	font-size: 1.4rem;
+}
+.message.error {
+	color: #b90e0a;
+}
+
 
 h1
 {

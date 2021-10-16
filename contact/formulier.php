@@ -8,7 +8,7 @@ ini_set('display_errors', 1);
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'restaurant');
+define('DB_NAME', 'multicultura');
 
 date_default_timezone_set('Europe/Brussels');
 
@@ -87,7 +87,7 @@ if (isset($_POST['btnSubmit'])) {
     <h1>Contacteer ons</h1>
     <p>Als u vragen hebt, kunt u ons contacteren door onderstaand formulier in te vullen.</p>
 
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <label for="naam">Uw naam</label>
         <input id="naam" type="text">
         
