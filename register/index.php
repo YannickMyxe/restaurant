@@ -22,10 +22,13 @@ try {
 }
 
 $username = isset($_POST['username']) ? (string)$_POST['username'] : '';
-$msgPassword = isset($_POST['password']) ? (string)$_POST['password'] : '';
+$password = isset($_POST['password']) ? (string)$_POST['password'] : '';
+$passwordAgain = isset($_POST['password-again']) ? (string)$_POST['password-again'] : '';
 
 $msgName = '';
 $msgPassword = '';
+$msgPasswordAgain = '';
+
 // form is sent: perform formchecking!
 if (isset($_POST['btnSubmit'])) {
 
@@ -36,8 +39,12 @@ if (isset($_POST['btnSubmit'])) {
         $msgName = 'Gelieve uw naam in te geven';
         $allOk = false;
     }
-    if (trim($msgPassword) === '') {
-        $msgPassword = 'Gelieve een wachtwoord in te geven';
+    if (trim($password) === '') {
+        $msgPassword = 'Gelieve uw naam in te geven';
+        $allOk = false;
+    }
+    if (trim($passwordAgain) === '') {
+        $msgPasswordAgain = 'Gelieve uw naam in te geven';
         $allOk = false;
     }
 
@@ -66,7 +73,7 @@ if (isset($_POST['btnSubmit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login | Multicultura</title>
+    <title>registreer | Multicultura</title>
     <link rel="stylesheet" href="../static/chat.css">
     <link rel="stylesheet" href="../static/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -100,11 +107,11 @@ if (isset($_POST['btnSubmit'])) {
     </header>
     <main>
     <div class="login">
-        <h1>Login!</h1>
+        <h1>Registreer een account!</h1>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <div class="form-item">
                     <label for="username" id="username">Accountnaam</label>
-                    <input name="username" id="username" class="username" type="text" maxlength="100" value="<?php echo htmlentities($username); ?>">
+                    <input name="username" id="username" class="text" type="text" maxlength="100" value="<?php echo htmlentities($username); ?>">
                     <span class="message error"><?php echo $msgName; ?></span>
                 </div>
 
@@ -113,9 +120,14 @@ if (isset($_POST['btnSubmit'])) {
                     <input type="password" name="password" id="password">
                     <span class="message error"><?php echo $msgPassword; ?></span>
                 </div>
+                <div class="form-item">
+                    <label for="password-again">Opnieuw Wachtwoord</label>
+                    <input type="password-again"  name="password-again">
+                    <span class="message error"><?php echo $msgPasswordAgain; ?></span>
+                </div>
                 <p>
-                    <button type="submit" id="btnSubmit" name="btnSubmit" class="button btnlogin">Login</button>
-                    <a href="../register/" class="button btnregistreer">Maak een account aan</a>
+                    <button type="submit" id="btnSubmit" name="btnSubmit" class="button btnlogin">Maak account aan</button>
+                    <a href="../login/" class="button btnregistreer">Heb je al een account</a>
                 </p>
             </form>
         </div>
