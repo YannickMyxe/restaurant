@@ -79,30 +79,63 @@ if (isset($_POST['btnSubmit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaties | Multicultura</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="icon" href="/img/logo.png">
-    <title>Contact | Restaurant Multicultura</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/map.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="icon" href="img/logo.png">
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a class="logo" href="../"><img src="../img/logo.png" alt="LOGO"></a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <ul class="navbar__menu">
+                    <li class="navbar__item"><a class="navbar__links" href="../">Home</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../reservaties/">Reserveren</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../about/">About</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../contact/">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <h1>Contacteer ons</h1>
     <p>Als u vragen hebt, kunt u ons contacteren door onderstaand formulier in te vullen.</p>
 
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="naam">Uw naam</label>
-        <input id="naam" type="text">
+        <div class="form-item">
+            <label for="naam">Uw naam</label>
+            <input id="naam" type="text">   
+        </div>
+       
+        <div class="form-item">
+            <label for="geslacht">Geslacht</label>
+            <input id="geslacht" name="gl" type="radio">Man
+            <input id="geslacht" name="gl" type="radio">Vrouw
+            <input id="geslacht" name="gl" type="radio">Anders
+        </div>
+        <div class="form-item">
+            <label for="email">E-mail</label>
+            <input id="email" type="email">
+        </div>
+
+        <div class="form-item">
+            <label for="bericht">Uw bericht</label>
+            <textarea name="berichten" id="bericht" cols="30" rows="10"></textarea>
+        </div>
         
-        <label for="geslacht">Geslacht</label>
-        <input id="geslacht" name="gl" type="radio">Man
-        <input id="geslacht" name="gl" type="radio">Vrouw
-        <input id="geslacht" name="gl" type="radio">Anders
-
-        <label for="email">E-mail</label>
-        <input id="email" type="email">
-
-        <label for="bericht">Uw bericht</label>
-        <textarea name="berichten" id="bericht" cols="30" rows="10"></textarea>
-
-        <input type="submit" name="submit">
+        <p><button type="submit" id="btnSubmit" name="btnSubmit">Submit</button></p>
     </form>
 </body>
 </html>
