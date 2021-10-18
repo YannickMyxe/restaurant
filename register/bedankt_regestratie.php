@@ -1,6 +1,7 @@
 <?php
 
-	$name = isset($_GET['username']) ? $_GET['username'] : false;
+	$name = isset($_GET['name']) ? $_GET['name'] : false;
+	$age = isset($_GET['age']) ? $_GET['age'] : false;
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -46,8 +47,8 @@
 	<?php
 		// Name sent in
 		if ($name) {
-			echo '<h1>Reservatie ontvangen</h1>';
-			echo '<p>Bedankt ' . htmlentities($name). ', we zullen u zo spoedig mogelijk contacteren!</p>';
+			echo '<h1>Regestratie geslaagd</h1>';
+			echo '<p>Bedankt ' . htmlentities($username). '</p>';
 			}
 			else {
 				echo '<p>Bedankt.</p>';

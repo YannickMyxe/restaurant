@@ -22,10 +22,12 @@ try {
 }
 
 $username = isset($_POST['username']) ? (string)$_POST['username'] : '';
+$email = isset($_POST['email']) ? (string)$_POST['email'] : '';
 $password = isset($_POST['password']) ? (string)$_POST['password'] : '';
 $passwordAgain = isset($_POST['password-again']) ? (string)$_POST['password-again'] : '';
 
 $msgName = '';
+$msgEmail = '';
 $msgPassword = '';
 $msgPasswordAgain = '';
 
@@ -39,24 +41,36 @@ if (isset($_POST['btnSubmit'])) {
         $msgName = 'Gelieve uw naam in te geven';
         $allOk = false;
     }
+    if (trim($email) === '') {
+        $msgEmail = 'Gelieve uw email in te geven';
+        $allOk = false;
+    }
     if (trim($password) === '') {
-        $msgPassword = 'Gelieve uw naam in te geven';
+        $msgPassword = 'Gelieve uw wachtwoord in te geven';
         $allOk = false;
     }
     if (trim($passwordAgain) === '') {
-        $msgPasswordAgain = 'Gelieve uw naam in te geven';
+        $msgPasswordAgain = 'Gelieve uw wachtwoord opnieuw in te geven';
         $allOk = false;
     }
+
+    if (!(trim($password) === trim($passwordAgain)))
+    {
+        $msgPassword = 'De gegeven wachtwoorden komen niet overeen';
+        $msgPasswordAgain = 'De gegeven wachtwoorden komen niet overeen';
+        $allOk = false;
+    }
+
 
     // end of form check. If $allOk still is true, then the form was sent in correctly
     if ($allOk) {
         // build & execute prepared statement
-        $stmt = $db->prepare('INSERT INTO reservaties (naam, password, datum, opmerking, added_on) VALUES (?, ?, ?, ?, ?)');
-        $stmt->execute(array($username, $amount, $date, $message, (new DateTime())->format('Y-m-d H:i:s')));
+        $stmt = $db->prepare('INSERT INTO accounts (username, email, password, created_at) VALUES (?, ?, ?, ?)');
+        $stmt->execute(array($username, $email, $password, (new DateTime())->format('Y-m-d H:i:s')));
 
         // the query succeeded, redirect to this very same page
         if ($db->lastInsertId() !== 0) {
-            header('Location: bedankt_reservatie.php?username=' . urlencode($username));
+            header('Location: bedankt_regestratie.php?username=' . urlencode($username));
             exit();
         } // the query failed
         else {
@@ -116,13 +130,19 @@ if (isset($_POST['btnSubmit'])) {
                 </div>
 
                 <div class="form-item">
+                    <label for="email" id="email">Email</label>
+                    <input name="email" id="email" class="email" type="text" maxlength="100" value="<?php echo htmlentities($email); ?>">
+                    <span class="message error"><?php echo $msgEmail; ?></span>
+                </div>
+
+                <div class="form-item">
                     <label for="password">Wachtwoord</label>
                     <input type="password" name="password" id="password">
                     <span class="message error"><?php echo $msgPassword; ?></span>
                 </div>
                 <div class="form-item">
                     <label for="password-again">Opnieuw Wachtwoord</label>
-                    <input type="password-again"  name="password-again">
+                    <input type="password"  name="password-again">
                     <span class="message error"><?php echo $msgPasswordAgain; ?></span>
                 </div>
                 <p>
