@@ -286,3 +286,15 @@ textarea
 {
     margin-bottom: 1.5em;
 }
+
+h1, p{
+    margin: 1rem;
+}
+
+.form-item {
+    margin: 1rem;
+}
+
+label{
+    font-size: 1.5em;
+}
