@@ -201,9 +201,6 @@ label {
 .message {
 	font-size: 1.4rem;
 }
-.message.error {
-	color: #b90e0a;
-}
 
 
 h1
@@ -276,7 +273,7 @@ button:hover
 
 .error
 {
-    color: red;
+    color: #ff0000;
     display: block;
 }
 
