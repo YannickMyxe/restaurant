@@ -1,7 +1,6 @@
 <?php
 
-	$name = isset($_GET['name']) ? $_GET['name'] : false;
-	$age = isset($_GET['age']) ? $_GET['age'] : false;
+	$username = isset($_GET['username']) ? $_GET['username'] : false;
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -33,6 +32,7 @@
 
                 <ul class="navbar__menu">
                     <li class="navbar__item"><a class="navbar__links" href="../">Home</a></li>
+                    <li class="navbar__item"><a class="navbar__links current-page" href="../login/">Login</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../reservaties/">Reserveren</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="about/">About</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project</a></li>
@@ -46,15 +46,16 @@
 		
 	<?php
 		// Name sent in
-		if ($name) {
+		if ($username) {
 			echo '<h1>Regestratie geslaagd</h1>';
-			echo '<p>Bedankt ' . htmlentities($username). '</p>';
+			echo '<p>Bedankt ' . htmlentities($username).', uw account is regeistreerd, log u in of ga terug naar de home pagina</p>';
 			}
-			else {
-				echo '<p>Bedankt.</p>';
-			}
-			echo '<a class="button" href="../">Keer terug naar de home pagina</a>';
-			?>
+        else {
+            echo '<p>Bedankt.</p>';
+        }
+        echo '<a class="button" href="../login">Ga naar het login scherm</a>';
+        echo '<a class="button" href="../">Keer terug naar de home pagina</a>';
+    ?>
 	</div>
 </main>
 </body>
