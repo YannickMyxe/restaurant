@@ -31,9 +31,16 @@
                 <ul class="navbar__menu">
                     <li class="navbar__item"><a class="navbar__links current-page" href="./">Home</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="reservaties/">Reserveren</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="about/">About</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="contact/">Contact</a></li>
+                    <li class="navbar_item">
+                        <div class="lang-menu">
+                            <div class="selected-lang">More info</div>
+                            <ul>
+                            <li class="navbar__item"><a class="navbar__links" href="about/">About us</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project info</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="contact/">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){echo '<li class="navbar__item"><a class="navbar__links" href="account/">Account</a></li>';}?>
                     <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) 
                         {echo '<li class="navbar__item"><a class="navbar__links" href="logout/"><i class="fas fa-user-circle"></i> Logout</a></li>';} 
@@ -45,8 +52,9 @@
                             <div class="selected-lang">Administrate</div>
                             <ul>
                                 <li><a href="./admin/reservaties/">Reservaties</a></li>
-                                <li><a href="">Contact</a></li>
-                                <li><a href="">Accounts</a> </li>
+                                <li><a href="./admin/contact/">Contact</a></li>
+                                <li><a href="./admin/accounts/">Accounts</a> </li>
+                                <li><a href="./admin/roles/">Rollen</a> </li>
                             </ul>
                         </div>
                     </li>
