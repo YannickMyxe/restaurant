@@ -134,11 +134,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </div>
                 <ul class="navbar__menu">
                     <li class="navbar__item"><a class="navbar__links" href="../">Home</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="./">Login</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../reservaties/">Reserveren</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../about/">About</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../contact/">Contact</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../contact/contact.php">Contact</a></li>
+                    <li class="navbar__item"><a class="navbar__links current-page" href="./"><i class="fas fa-user-circle"></i> Login</a></li>
                 </ul>
             </div>
         </nav>

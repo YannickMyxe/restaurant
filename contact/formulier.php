@@ -21,14 +21,14 @@ try {
     exit;
 }
 
-$name = isset($_POST['name']) ? (string)$_POST['name'] : '';
-$message = isset($_POST['message']) ? (string)$_POST['message'] : '';
+$naam = isset($_POST['naam']) ? (string)$_POST['naam'] : '';
+$geslacht = isset($_POST['geslacht']) ? (string)$_POST['geslacht'] : '';
 $email = isset($_POST['email']) ? (string)$_POST['email'] : '';
-$findme = isset($_POST['radio-findme']) ? (string)$_POST['radio-findme'] : '';
-$msgName = '';
-$msgMessage = '';
+$bericht = isset($_POST['bericht']) ? (string)$_POST['bericht'] : '';
+$msgNaam = '';
+$msgGeslacht = '';
 $msgEmail = '';
-$msgFindme = '';
+$msgBericht = '';
 
 // form is sent: perform formchecking!
 if (isset($_POST['btnSubmit'])) {
@@ -36,35 +36,35 @@ if (isset($_POST['btnSubmit'])) {
     $allOk = true;
 
     // name not empty
-    if (trim($name) === '') {
-        $msgName = 'Please fill in your name';
+    if (trim($naam) === '') {
+        $msgNaam = 'Gelieve uw naam in te voeren';
         $allOk = false;
     }
 
-    if (trim($message) === '') {
-        $msgMessage = 'Please leave a message';
+    if (trim($geslacht) === '') {
+        $msgGeslacht = 'Gelieve uw geslacht aan te duiden';
         $allOk = false;
     }
 
     if (trim($email) === '') {
-        $msgEmail = 'Please enter your email adress so I can contact you back';
+        $msgEmail = 'Gelieve uw e-mailadres in te voeren';
         $allOk = false;
     }
 
-    if (trim($findme) === '') {
-        $msgFindme = 'Please select one of the following options';
+    if (trim($bericht) === '') {
+        $msgBericht = 'Gelieve een bericht in te voeren';
         $allOk = false;
     }
 
     // end of form check. If $allOk still is true, then the form was sent in correctly
     if ($allOk) {
         // build & execute prepared statement
-        $stmt = $db->prepare('INSERT INTO messages (sender, email, message, findme, added_on) VALUES (?, ?, ?, ?, ?)');
-        $stmt->execute(array($name, $email, $message, $findme, (new DateTime())->format('Y-m-d H:i:s')));
+        $stmt = $db->prepare('INSERT INTO contact (naam, geslacht, email, bericht) VALUES (?, ?, ?, ?)');
+        $stmt->execute(array($naam, $geslacht, $email, $bericht));
 
         // the query succeeded, redirect to this very same page
         if ($db->lastInsertId() !== 0) {
-            header('Location: formchecking_thanks.php?name=' . urlencode($name));
+            header('Location: bedank.php?name=' . urlencode($name));
             exit();
         } // the query failed
         else {
@@ -116,23 +116,28 @@ if (isset($_POST['btnSubmit'])) {
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div class="form-item">
             <label for="naam">Uw naam</label>
-            <input id="naam" type="text">   
+            <input id="naam" type="text" name="naam" value="<?php echo htmlentities($naam); ?>">
+            <span class="message error"><?php echo $msgNaam; ?></span>
         </div>
        
         <div class="form-item">
             <label for="geslacht">Geslacht</label>
-            <input id="geslacht" name="gl" type="radio">Man
-            <input id="geslacht" name="gl" type="radio">Vrouw
-            <input id="geslacht" name="gl" type="radio">Anders
+            <input id="man" name="geslacht" value="0" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "man") {echo "checked";} ?>>Man
+            <input id="vrouw" name="geslacht" value="1" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "vrouw") {echo "checked";} ?>>Vrouw
+            <input id="anders" name="geslacht" value="2" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "anders") {echo "checked";} ?>>Anders
+            <span class="message error"><?php echo $msgGeslacht; ?></span>
         </div>
+
         <div class="form-item">
             <label for="email">E-mail</label>
-            <input id="email" type="email">
+            <input id="email" type="email" name="email" value="<?php echo htmlentities($email); ?>">
+            <span class="message error"><?php echo $msgEmail; ?></span>
         </div>
 
         <div class="form-item">
             <label for="bericht">Uw bericht</label>
-            <textarea name="berichten" id="bericht" cols="30" rows="10"></textarea>
+            <textarea name="bericht" id="bericht" cols="30" rows="10" value="<?php echo htmlentities($email); ?>"></textarea>
+            <span class="message error"><?php echo $msgBericht; ?></span>
         </div>
         
         <p><button type="submit" id="btnSubmit" name="btnSubmit">Submit</button></p>
