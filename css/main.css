@@ -404,7 +404,9 @@ label{
     border: 1px solid var(--cl-primary-200);
     border-radius: 10px;
     margin: 0.25em;
-    width: 25vw;
+    max-width: 50vw;
+    min-width: 25em;
+    width: 50em;
     overflow-x: scroll;
 }
 
