@@ -42,6 +42,16 @@
                     ?>
                     <li class="navbar_item">
                         <div class="lang-menu">
+                            <div class="selected-lang">Administrate</div>
+                            <ul>
+                                <li><a href="./admin/reservaties/">Reservaties</a></li>
+                                <li><a href="">Contact</a></li>
+                                <li><a href="">Accounts</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="navbar_item">
+                        <div class="lang-menu">
                             <div class="selected-lang ne">Nederlands</div>
                             <ul>
                                 <li><a class="ne" href="../">Nederlands</a></li>
