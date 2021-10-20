@@ -260,6 +260,7 @@ input[type=radio]{
 
 button
 {
+    margin-bottom: 1.25em;
     padding: 1em;
     border-radius: 3px;
     border: 1px solid var(--cl-primary-800);
@@ -291,13 +292,11 @@ input:read-only
 {
     background: rgba(0, 0, 0, 0.25);
 }
+/* Zorgt voor ongewenste inspringingen van text -> alternatief zoeken
 h1, p{
     margin: 1rem;
 }
-
-.form-item {
-    margin: 1rem;
-}
+*/
 
 label{
     font-size: 1.5em;
@@ -385,3 +384,4 @@ label{
 .lang-menu:hover ul{
     display: block;
 }
+
