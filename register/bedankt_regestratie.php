@@ -44,18 +44,18 @@
 	<main>
 	<div class="thank-you-message">
 		
+    <h1>Regestratie geslaagd</h1>
 	<?php
 		// Name sent in
 		if ($username) {
-			echo '<h1>Regestratie geslaagd</h1>';
 			echo '<p>Bedankt ' . htmlentities($username).', uw account is regeistreerd, log u in of ga terug naar de home pagina</p>';
 			}
         else {
             echo '<p>Bedankt.</p>';
         }
-        echo '<a class="button" href="../login">Ga naar het login scherm</a>';
-        echo '<a class="button" href="../">Keer terug naar de home pagina</a>';
     ?>
+    <a class="button" href="../login">Ga naar het login scherm</a>
+    <a class="button" href="../">Keer terug naar de home pagina</a>
 	</div>
 </main>
 </body>

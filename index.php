@@ -28,9 +28,8 @@
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
-
                 <ul class="navbar__menu">
-                    <li class="navbar__item"><a class="navbar__links" href="./">Home</a></li>
+                    <li class="navbar__item"><a class="navbar__links current-page" href="./">Home</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="reservaties/">Reserveren</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="about/">About</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project</a></li>

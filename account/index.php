@@ -112,17 +112,21 @@
         </nav>
     </header>
     <main>
-        <h1>Account gegevens</h1>
+        <h1>Jouw Account</h1>
+        <p>Hier kan je jouw gegevens aanpassen indien er wijzegingen nodig zijn.</p>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <label for="id">Id</label>
-            <input type="text" name="id" id="id" readonly value="<?php echo htmlentities($_SESSION['id']); ?>">
+            <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'editor'){
+                echo'
+                <label for="id">Id</label>
+                <input type="text" name="id" id="id" readonly value="<?php echo htmlentities($_SESSION["id"]); ?>">';} 
+            else echo '';?>
             <label for="username">Naam</label>
             <input type="text" name="username" id="username" value="<?php echo htmlentities($username); ?>">
             <span class="message error"><?php echo $msgUsername; ?></span>
             <label for="email">Email</label>
             <input type="email" name="email" id="email" value="<?php echo htmlentities($email); ?>">
             <span class="message error"><?php echo $msgEmail; ?></span>
-            <button type="submit" id="btnSubmit" name="btnSubmit" class="button btnlogin">Pas account aan</button>
+            <button type="submit" id="btnSubmit" name="btnSubmit" class="button">Pas account aan</button>
         </form>
     </main>
     <footer class="center">
