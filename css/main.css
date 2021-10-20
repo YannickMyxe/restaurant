@@ -258,9 +258,13 @@ input[type=radio]{
     background-color: var(--cl-primary-100);
 }
 
-button
+form button
 {
     margin-bottom: 1.25em;
+}
+
+button
+{
     padding: 1em;
     border-radius: 3px;
     border: 1px solid var(--cl-primary-800);
