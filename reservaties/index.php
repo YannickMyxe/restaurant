@@ -103,7 +103,7 @@ if (isset($_POST['btnSubmit'])) {
                     <li class="navbar__item"><a class="navbar__links current-page" href="../reservaties/">Reserveren</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../about/">About</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../contact/contact.php">Contact</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../contact/">Contact</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="login/"><i class="fas fa-user-circle"></i> Login</a></li>
                     <li class="navbar_item">
                         <div class="lang-menu">
