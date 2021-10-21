@@ -134,37 +134,41 @@ if (isset($_POST['btnSubmit'])) {
         </nav>
     </header>
     <main>
-        <div class="reservaties">
-            <h1>Reservaties!</h1>
-            <p>Welkom bij het reservatie menu, gelieve dit formulier in te vullen.</p>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <div class="form-item">
-                    <label for="name" id="name">Jouw naam</label>
-                    <input name="name" id="name" class="text" type="text" maxlength="100" value="<?php echo htmlentities($name); ?>">
-                    <span class="message error"><?php echo $msgName; ?></span>
-                </div>
+        <h1>Reservaties!</h1>
+        <p>Welkom bij het reservatie menu, gelieve dit formulier in te vullen.</p>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <div class="form-item">
+                <label for="name" id="name">Jouw naam</label>
+                <input name="name" id="name" class="text" type="text" maxlength="100" value="<?php echo htmlentities($name); ?>">
+                <span class="message error"><?php echo $msgName; ?></span>
+            </div>
 
-                <div class="form-item">
-                    <label for="aantal">Aantal personen</label>
-                    <input type="number" name="aantal" id="aantal" min="1" max="20" value="<?php echo htmlentities($amount); ?>">
-                    <span class="message error"><?php echo $msgAmount; ?></span>
-                </div>
+            <div class="form-item">
+                <label for="aantal">Aantal personen</label>
+                <input type="number" name="aantal" id="aantal" min="1" max="20" value="<?php echo htmlentities($amount); ?>">
+                <span class="message error"><?php echo $msgAmount; ?></span>
+            </div>
 
-                <div class="form-item">
-                    <label for="datum">Datum reservatie</label>
-                    <input type="datetime-local" name="datum" id="datum" value="<?php echo htmlentities($date); ?>">
-                    <span class="message error"><?php echo $msgDate; ?></span>
-                </div>
+            <div class="form-item">
+                <label for="datum">Datum reservatie</label>
+                <input type="datetime-local" name="datum" id="datum" value="<?php echo htmlentities($date); ?>">
+                <span class="message error"><?php echo $msgDate; ?></span>
+            </div>
 
-                <div class="form-item">
-                    <label for="message">Heb je nog opmerkingen?</label>
-                    <textarea name="message" id="message" class="text"><?php echo htmlentities($message); ?></textarea>
-                    <span class="message error"><?php echo $msgMessage; ?></span>
-                </div>
-
+<<<<<<< HEAD
                 <p><button type="submit" id="btnSubmit" name="btnSubmit">Bevestig je reservatie</button></p>
             </form>
         </div>
+=======
+            <div class="form-item">
+                <label for="message">Heb je nog opmerkingen?</label>
+                <p class="form-optional">Optioneel, dit hoef je niet in te vullen.</p>
+                <textarea name="message" id="message" class="text"><?php echo htmlentities($message); ?></textarea>
+                <span class="message error"><?php echo $msgMessage; ?></span>
+            </div>
+            <button type="submit" id="btnSubmit" name="btnSubmit" class="button">Send your message</button>
+        </form>
+>>>>>>> 461b6aa2503c8c75197b9ba653a9d092a3aff46c
     </main>
     <footer class="center">
         Copyright &copy; Restaurant Multicultura - Gebroeders de Smetstraat 1, 9000 Gent | est 2021

@@ -1,7 +1,6 @@
 @import url('vars.css');
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap');
 
-
 header{
     top: 0;
     position: sticky;
@@ -161,6 +160,11 @@ img{
     }
 }
 
+.navbar__menu
+{
+    margin-right: 5em;
+}
+
 .center
 {
     text-align: center;
@@ -202,7 +206,6 @@ label {
 	font-size: 1.4rem;
 }
 
-
 h1
 {
     font-size: 4rem;
@@ -238,8 +241,6 @@ input[type=radio]{
     display: block;
 }
 
-
-
 .button
 {
     display: block;
@@ -256,6 +257,11 @@ input[type=radio]{
 .button:hover
 {
     background-color: var(--cl-primary-100);
+}
+
+form button
+{
+    margin-bottom: 1.25em;
 }
 
 button
@@ -289,15 +295,14 @@ textarea
 
 input:read-only
 {
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--cl-primary-800);
+    color: var(--cl-primary-100);
 }
+/* Zorgt voor ongewenste inspringingen van text -> alternatief zoeken
 h1, p{
     margin: 1rem;
 }
-
-.form-item {
-    margin: 1rem;
-}
+*/
 
 label{
     font-size: 1.5em;
@@ -309,7 +314,7 @@ label{
     display: flex;
     justify-content: space-between;
     line-height: 2;
-    width: 120px;
+    width: 140px;
     padding-left: 5px;
     padding-right: 10px;
 }
@@ -384,4 +389,32 @@ label{
 
 .lang-menu:hover ul{
     display: block;
+}
+
+.reservatie-cards
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reservatie-card
+{
+    background: var(--cl-primary-800);
+    color: var(--cl-primary-100);
+    border: 1px solid var(--cl-primary-200);
+    border-radius: 10px;
+    margin: 0.25em;
+    min-width: 25em;
+    width: 30em;
+    overflow-x: scroll;
+}
+
+.reservatie-card p
+{
+    padding: 0.25em 2em;
+}
+.reservatie-card p i
+{
+    font-style: normal;
+    font-weight: 800;
 }
