@@ -103,7 +103,7 @@ if (isset($_POST['btnSubmit'])) {
                     <li class="navbar__item"><a class="navbar__links current-page" href="../fr/reservaties.php">Réserver</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../about/">À propos de</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Projet</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../contact/contact.php">Contacter</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../fr/contact.php">Contacter</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="login/"><i class="fas fa-user-circle"></i> Connexion</a></li>
                     <li class="navbar_item">
                         <div class="lang-menu">
@@ -120,11 +120,11 @@ if (isset($_POST['btnSubmit'])) {
                                 </li>
 
                                 <li>
-                                    <a class="en" href="../en/reservaties.php">Anglais</a>
+                                    <a class="en" href="../en/reservations/">Anglais</a>
                                 </li>
 
                                 <li>
-                                    <a class="de" href="de/">Allemand</a>
+                                    <a class="de" href="../de/buchen">Allemand</a>
                                 </li>
                             </ul>
                         </div>

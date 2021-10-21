@@ -37,22 +37,22 @@ if (isset($_POST['btnSubmit'])) {
 
     // name not empty
     if (trim($naam) === '') {
-        $msgNaam = 'Gelieve uw naam in te voeren';
+        $msgNaam = 'Veuillez entrer votre nom';
         $allOk = false;
     }
 
     if (trim($geslacht) === '') {
-        $msgGeslacht = 'Gelieve uw geslacht aan te duiden';
+        $msgGeslacht = 'Veuillez indiquer votre sexe';
         $allOk = false;
     }
 
     if (trim($email) === '') {
-        $msgEmail = 'Gelieve uw e-mailadres in te voeren';
+        $msgEmail = 'Veuillez entrer votre adresse e-mail';
         $allOk = false;
     }
 
     if (trim($bericht) === '') {
-        $msgBericht = 'Gelieve een bericht in te voeren';
+        $msgBericht = 'Veuillez entrer un message';
         $allOk = false;
     }
 
@@ -75,7 +75,7 @@ if (isset($_POST['btnSubmit'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -101,32 +101,32 @@ if (isset($_POST['btnSubmit'])) {
                 </div>
 
                 <ul class="navbar__menu">
-                    <li class="navbar__item"><a class="navbar__links" href="../">Home</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../reservaties/">Reserveren</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../about/">About</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../fr">Accueil</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../fr/reservaties.php">Réservation</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../about/">À propos de</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Projet</a></li>
                     <li class="navbar__item"><a class="navbar__links current-page" href="../contact/contact.php">Contact</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../login/"><i class="fas fa-user-circle"></i> Login</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../login/"><i class="fas fa-user-circle"></i> Connexion</a></li>
                     <li class="navbar_item">
                         <div class="lang-menu">
-                            <div class="selected-lang ne">
-                                Nederlands
+                            <div class="selected-lang fr">
+                                Français
                             </div>
                             <ul>
                                 <li>
+                                    <a class="fr" href="../fr/contact.php">Français</a>
+                                </li>
+
+                                <li>
                                     <a class="ne" href="../contact">Néerlandais</a>
                                 </li>
-
+                                
                                 <li>
-                                    <a class="fr" href="../fr/contact.php">Frans</a>
+                                    <a class="en" href="../en/contact">Anglais</a>
                                 </li>
 
                                 <li>
-                                    <a class="en" href="../en/contact">Engels</a>
-                                </li>
-
-                                <li>
-                                    <a class="de" href="../de/Kontakt">Duits</a>
+                                    <a class="de" href="../de/Kontakt">Allemand</a>
                                 </li>
 
                             </ul>
@@ -137,41 +137,41 @@ if (isset($_POST['btnSubmit'])) {
         </nav>
     </header>
 
-    <main>
-    <h1 class="left-align">Contacteer ons</h1>
-    <p>Als u vragen hebt, kunt u ons contacteren door onderstaand formulier in te vullen.</p>
+    <h1>Nous contacter</h1>
+    <p>Si vous avez des questions, veuillez nous contacter en remplissant le formulaire ci-dessous.</p>
 
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div class="form-item">
-            <label for="naam">Uw naam</label>
+            <label for="naam">Votre nom</label>
             <input id="naam" type="text" name="naam" value="<?php echo htmlentities($naam); ?>">
             <span class="message error"><?php echo $msgNaam; ?></span>
         </div>
+       
         <div class="form-item">
-            <label for="geslacht">Geslacht</label>
-            <input id="man" name="geslacht" value="0" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "man") {echo "checked";} ?>>Man
+            <label for="geslacht">Sexe</label>
+            <input id="man" name="geslacht" value="0" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "man") {echo "checked";} ?>>Homme
             <input id="vrouw" name="geslacht" value="1" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "vrouw") {echo "checked";} ?>>Vrouw
-            <input id="anders" name="geslacht" value="2" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "anders") {echo "checked";} ?>>Anders
+            <input id="anders" name="geslacht" value="2" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "anders") {echo "checked";} ?>>Autrement
             <span class="message error"><?php echo $msgGeslacht; ?></span>
         </div>
 
         <div class="form-item">
-            <label for="email">E-mail</label>
+            <label for="email">Courrier électronique</label>
             <input id="email" type="email" name="email" value="<?php echo htmlentities($email); ?>">
             <span class="message error"><?php echo $msgEmail; ?></span>
         </div>
 
         <div class="form-item">
-            <label for="bericht">Uw bericht</label>
+            <label for="bericht">Votre message</label>
             <textarea name="bericht" id="bericht" cols="30" rows="10" value="<?php echo htmlentities($email); ?>"></textarea>
             <span class="message error"><?php echo $msgBericht; ?></span>
         </div>
         
-        <p><button type="submit" id="btnSubmit" name="btnSubmit">Submit</button></p>
+        <p><button type="submit" id="btnSubmit" name="btnSubmit">Soumettre</button></p>
     </form>
-    </main>
+
     <footer class="center">
-        Copyright &copy; Restaurant Multicultura - Gebroeders de Smetstraat 1, 9000 Gent | est 2021
+        Copyright &copy; Restaurant Multicultura - Gebroeders de Smetstraat 1, 9000 Gand | est 2021
     </footer>
 </body>
 </html>
