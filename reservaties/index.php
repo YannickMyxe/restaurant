@@ -155,11 +155,6 @@ if (isset($_POST['btnSubmit'])) {
                 <span class="message error"><?php echo $msgDate; ?></span>
             </div>
 
-<<<<<<< HEAD
-                <p><button type="submit" id="btnSubmit" name="btnSubmit">Bevestig je reservatie</button></p>
-            </form>
-        </div>
-=======
             <div class="form-item">
                 <label for="message">Heb je nog opmerkingen?</label>
                 <p class="form-optional">Optioneel, dit hoef je niet in te vullen.</p>
@@ -168,7 +163,6 @@ if (isset($_POST['btnSubmit'])) {
             </div>
             <button type="submit" id="btnSubmit" name="btnSubmit" class="button">Send your message</button>
         </form>
->>>>>>> 461b6aa2503c8c75197b9ba653a9d092a3aff46c
     </main>
     <footer class="center">
         Copyright &copy; Restaurant Multicultura - Gebroeders de Smetstraat 1, 9000 Gent | est 2021
