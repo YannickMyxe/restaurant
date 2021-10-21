@@ -44,7 +44,7 @@
 	<main>
 	<div class="thank-you-message">
 		
-    <h1>Regestratie geslaagd</h1>
+    <h1>Registratie geslaagd</h1>
 	<?php
 		// Name sent in
 		if ($username) {
