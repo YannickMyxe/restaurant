@@ -1,5 +1,12 @@
 <?php
+// Initialize the session
+session_start();
 
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: ../account/");
+    exit;
+}
 // Show all errors (for educational purposes)
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
@@ -12,51 +19,89 @@ define('DB_NAME', 'multicultura');
 
 date_default_timezone_set('Europe/Brussels');
 
-// Verbinding maken met de databank
-try {
-    $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASS);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo 'Verbindingsfout: ' . $e->getMessage();
-    exit;
+/* Attempt to connect to MySQL database */
+try{
+    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
+    // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e){
+    die("ERROR: Could not connect. " . $e->getMessage());
 }
 
-$username = isset($_POST['username']) ? (string)$_POST['username'] : '';
-$msgPassword = isset($_POST['password']) ? (string)$_POST['password'] : '';
+// Define variables and initialize with empty values
+$email = $password = "";
+$email_err = $password_err = $login_err = "";
 
-$msgName = '';
-$msgPassword = '';
-// form is sent: perform formchecking!
-if (isset($_POST['btnSubmit'])) {
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    $allOk = true;
-
-    // username not empty
-    if (trim($username) === '') {
-        $msgName = 'Gelieve uw naam in te geven';
-        $allOk = false;
+    // Check if username is empty
+    if(empty(trim($_POST["email"]))){
+        $email_err = "Please enter email.";
+    } else{
+        $email = trim($_POST["email"]);
     }
-    if (trim($msgPassword) === '') {
-        $msgPassword = 'Gelieve een wachtwoord in te geven';
-        $allOk = false;
+    
+    // Check if password is empty
+    if(empty(trim($_POST["password"]))){
+        $password_err = "Please enter your password.";
+    } else{
+        $password = trim($_POST["password"]);
     }
+    
+    // Validate credentials
+    if(empty($username_err) && empty($password_err)){
+        // Prepare a select statement
+        $sql = "SELECT id, username, email, password FROM accounts WHERE email = :email";
+        
+        if($stmt = $pdo->prepare($sql)){
+            // Bind variables to the prepared statement as parameters
+            $stmt->bindParam(":email", $param_email, PDO::PARAM_STR);
+            
+            // Set parameters
+            $param_email = trim($_POST["email"]);
+            
+            // Attempt to execute the prepared statement
+            if($stmt->execute()){
+                // Check if username exists, if yes then verify password
+                if($stmt->rowCount() == 1){
+                    if($row = $stmt->fetch()){
+                        $id = $row["id"];
+                        $username = $row["username"];
+                        $email = $row["email"];
+                        $hashed_password = $row["password"];
+                        if(password_verify($password, $hashed_password)){
+                            // Password is correct, so start a new session
+                            session_start();
+                            
+                            // Store data in session variables
+                            $_SESSION["loggedin"] = true;
+                            $_SESSION["id"] = $id;
+                            $_SESSION["username"] = $username;                            
+                            $_SESSION["email"] = $email;                            
+                            
+                            // Redirect user to welcome page
+                            header("location: ../account/");
+                        } else{
+                            // Password is not valid, display a generic error message
+                            $login_err = "Invalid username or password.";
+                        }
+                    }
+                } else{
+                    // Username doesn't exist, display a generic error message
+                    $login_err = "Invalid username or password.";
+                }
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
 
-    // end of form check. If $allOk still is true, then the form was sent in correctly
-    if ($allOk) {
-        // build & execute prepared statement
-        $stmt = $db->prepare('INSERT INTO reservaties (naam, password, datum, opmerking, added_on) VALUES (?, ?, ?, ?, ?)');
-        $stmt->execute(array($username, $amount, $date, $message, (new DateTime())->format('Y-m-d H:i:s')));
-
-        // the query succeeded, redirect to this very same page
-        if ($db->lastInsertId() !== 0) {
-            header('Location: bedankt_reservatie.php?username=' . urlencode($username));
-            exit();
-        } // the query failed
-        else {
-            echo 'Databankfout.';
-            exit;
+            // Close statement
+            unset($stmt);
         }
     }
+    
+    // Close connection
+    unset($pdo);
 }
 ?>
 
@@ -103,15 +148,15 @@ if (isset($_POST['btnSubmit'])) {
         <h1>Login!</h1>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <div class="form-item">
-                    <label for="username" id="username">Accountnaam</label>
-                    <input name="username" id="username" class="username" type="text" maxlength="100" value="<?php echo htmlentities($username); ?>">
-                    <span class="message error"><?php echo $msgName; ?></span>
+                    <label for="email" id="email">Emailadres</label>
+                    <input name="email" id="email" class="email" type="email" maxlength="100" value="<?php echo htmlentities($email); ?>">
+                    <span class="message error"><?php echo $email_err; ?></span>
                 </div>
 
                 <div class="form-item">
                     <label for="password">Wachtwoord</label>
                     <input type="password" name="password" id="password">
-                    <span class="message error"><?php echo $msgPassword; ?></span>
+                    <span class="message error"><?php echo $password_err; ?></span>
                 </div>
                 <p>
                     <button type="submit" id="btnSubmit" name="btnSubmit" class="button btnlogin">Login</button>

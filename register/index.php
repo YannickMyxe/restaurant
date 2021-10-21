@@ -56,7 +56,6 @@ if (isset($_POST['btnSubmit'])) {
 
     if (!(trim($password) === trim($passwordAgain)))
     {
-        $msgPassword = 'De gegeven wachtwoorden komen niet overeen';
         $msgPasswordAgain = 'De gegeven wachtwoorden komen niet overeen';
         $allOk = false;
     }
@@ -64,9 +63,10 @@ if (isset($_POST['btnSubmit'])) {
 
     // end of form check. If $allOk still is true, then the form was sent in correctly
     if ($allOk) {
+        $param_password = password_hash($password, PASSWORD_DEFAULT);
         // build & execute prepared statement
         $stmt = $db->prepare('INSERT INTO accounts (username, email, password, created_at) VALUES (?, ?, ?, ?)');
-        $stmt->execute(array($username, $email, $password, (new DateTime())->format('Y-m-d H:i:s')));
+        $stmt->execute(array($username, $email, $param_password, (new DateTime())->format('Y-m-d H:i:s')));
 
         // the query succeeded, redirect to this very same page
         if ($db->lastInsertId() !== 0) {
