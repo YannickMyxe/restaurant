@@ -58,6 +58,7 @@ img{
 
 .navbar__item{
     margin-top: 0.45em;
+    z-index: 999;
 }
 
 .navbar__links{
