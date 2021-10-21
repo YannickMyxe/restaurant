@@ -52,7 +52,7 @@ $naam = isset($_POST['naam']) ? (string)$_POST['naam'] : '';
 $aantal = isset($_POST['aantal']) ? (string)$_POST['aantal'] : '';
 $datum = isset($_POST['datum']) ? (string)$_POST['datum'] : '';
 $opmerking = isset($_POST['opmerking']) ? (string)$_POST['opmerking'] : '';
-$id;
+$id = isset($_POST['id']) ? (string)$_POST['id'] : 1;;
 
 $msgNaam = '';
 $msgAantal = '';
@@ -170,12 +170,10 @@ if (isset($_POST['btnSubmit'])) {
                     <label for="datum">datum</label><input name="datum" type="datetime-local" value="<?php echo htmlentities($user['datum']);?>"></p>
                     <label for="opmerking">opmerking</label><textarea name="opmerking" id="opmerking"><?php echo htmlentities($user['opmerking']);?></textarea></p>
                     <label for="datum-toegevoegd">datum-toegevoegd</label><input name="datum-toegevoegd" type="text" readonly value="<?php echo htmlentities($user['added_on']);?>"></p>
+                    
+                    <a href="./" class="button">Anuleren</a>
                     <button type="submit" id="btnSubmit" name="btnSubmit" class="button">Verander gegevens</button>
                 </form>
-                <p>
-                    <a class="button" href="./edit.php?id=<?php if($id == 0){echo 0;}else{echo ($id-1);} ?>"> << vorige </a> 
-                    <a class="button" href="./edit.php?id=<?php echo ($id+1);?>"> >> volgende </a>
-                </p>
             </div>
         </div>
     </main>
