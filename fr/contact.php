@@ -21,15 +21,14 @@ try {
     exit;
 }
 
-$name = isset($_POST['name']) ? (string)$_POST['name'] : '';
-$message = isset($_POST['message']) ? (string)$_POST['message'] : '';
-$amount = isset($_POST['aantal']) ? (string)$_POST['aantal'] : '1';
-$date = isset($_POST['datum']) ? (string)$_POST['datum'] : '';
-
-$msgName = '';
-$msgMessage = '';
-$msgAmount = '';
-$msgDate = '';
+$naam = isset($_POST['naam']) ? (string)$_POST['naam'] : '';
+$geslacht = isset($_POST['geslacht']) ? (string)$_POST['geslacht'] : '';
+$email = isset($_POST['email']) ? (string)$_POST['email'] : '';
+$bericht = isset($_POST['bericht']) ? (string)$_POST['bericht'] : '';
+$msgNaam = '';
+$msgGeslacht = '';
+$msgEmail = '';
+$msgBericht = '';
 
 // form is sent: perform formchecking!
 if (isset($_POST['btnSubmit'])) {
@@ -37,32 +36,35 @@ if (isset($_POST['btnSubmit'])) {
     $allOk = true;
 
     // name not empty
-    if (trim($name) === '') {
-        $msgName = 'Veuillez entrer votre nom';
-        $allOk = false;
-    }
-    if (trim($amount) === '') {
-        $msgAmount = 'Veuillez indiquer le nombre de personnes pour votre réservation';
+    if (trim($naam) === '') {
+        $msgNaam = 'Veuillez entrer votre nom';
         $allOk = false;
     }
 
-    if (trim($date) === '') {
-        $msgDate = 'Veuillez entrer une date';
+    if (trim($geslacht) === '') {
+        $msgGeslacht = 'Veuillez indiquer votre sexe';
+        $allOk = false;
+    }
+
+    if (trim($email) === '') {
+        $msgEmail = 'Veuillez entrer votre adresse e-mail';
+        $allOk = false;
+    }
+
+    if (trim($bericht) === '') {
+        $msgBericht = 'Veuillez entrer un message';
         $allOk = false;
     }
 
     // end of form check. If $allOk still is true, then the form was sent in correctly
     if ($allOk) {
-        if (trim($message) === '') {
-            $message = "aucun commentaire n'a été ajouté";
-        }
         // build & execute prepared statement
-        $stmt = $db->prepare('INSERT INTO reservaties (naam, aantal, datum, opmerking, added_on) VALUES (?, ?, ?, ?, ?)');
-        $stmt->execute(array($name, $amount, $date, $message, (new DateTime())->format('Y-m-d H:i:s')));
+        $stmt = $db->prepare('INSERT INTO contact (naam, geslacht, email, bericht) VALUES (?, ?, ?, ?)');
+        $stmt->execute(array($naam, $geslacht, $email, $bericht));
 
         // the query succeeded, redirect to this very same page
         if ($db->lastInsertId() !== 0) {
-            header('Location: bedankt_reservatie.php?name=' . urlencode($name));
+            header('Location: bedank.php?naam=' . urlencode($naam));
             exit();
         } // the query failed
         else {
@@ -73,12 +75,12 @@ if (isset($_POST['btnSubmit'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservations | Multicultura</title>
+    <title>Contact | Multicultura</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
@@ -100,11 +102,11 @@ if (isset($_POST['btnSubmit'])) {
 
                 <ul class="navbar__menu">
                     <li class="navbar__item"><a class="navbar__links" href="../fr">Accueil</a></li>
-                    <li class="navbar__item"><a class="navbar__links current-page" href="../fr/reservaties.php">Réserver</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../fr/reservaties.php">Réservation</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../about/">À propos de</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Projet</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../fr/contact.php">Contacter</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="login/"><i class="fas fa-user-circle"></i> Connexion</a></li>
+                    <li class="navbar__item"><a class="navbar__links current-page" href="../contact/contact.php">Contact</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../login/"><i class="fas fa-user-circle"></i> Connexion</a></li>
                     <li class="navbar_item">
                         <div class="lang-menu">
                             <div class="selected-lang fr">
@@ -112,20 +114,21 @@ if (isset($_POST['btnSubmit'])) {
                             </div>
                             <ul>
                                 <li>
-                                    <a class="fr" href="../fr/reservaties.php">Français</a>
+                                    <a class="fr" href="../fr/contact.php">Français</a>
                                 </li>
 
                                 <li>
-                                    <a class="ne" href="../reservaties">Néerlandais</a>
+                                    <a class="ne" href="../contact">Néerlandais</a>
+                                </li>
+                                
+                                <li>
+                                    <a class="en" href="../en/contact">Anglais</a>
                                 </li>
 
                                 <li>
-                                    <a class="en" href="../en/reservations/">Anglais</a>
+                                    <a class="de" href="../de/Kontakt">Allemand</a>
                                 </li>
 
-                                <li>
-                                    <a class="de" href="../de/buchen">Allemand</a>
-                                </li>
                             </ul>
                         </div>
                     </li>
@@ -133,39 +136,40 @@ if (isset($_POST['btnSubmit'])) {
             </div>
         </nav>
     </header>
-    <main>
-        <div class="reservaties">
-            <h1>Réservations!</h1>
-            <p>Bienvenue au menu de réservation, veuillez remplir ce formulaire.</p>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <div class="form-item">
-                    <label for="name" id="name">Votre nom</label>
-                    <input name="name" id="name" class="text" type="text" maxlength="100" value="<?php echo htmlentities($name); ?>">
-                    <span class="message error"><?php echo $msgName; ?></span>
-                </div>
 
-                <div class="form-item">
-                    <label for="aantal">Nombre de personnes</label>
-                    <input type="number" name="aantal" id="aantal" min="1" max="20" value="<?php echo htmlentities($amount); ?>">
-                    <span class="message error"><?php echo $msgAmount; ?></span>
-                </div>
+    <h1>Nous contacter</h1>
+    <p>Si vous avez des questions, veuillez nous contacter en remplissant le formulaire ci-dessous.</p>
 
-                <div class="form-item">
-                    <label for="datum">Date de réservation</label>
-                    <input type="datetime-local" name="datum" id="datum" value="<?php echo htmlentities($date); ?>">
-                    <span class="message error"><?php echo $msgDate; ?></span>
-                </div>
-
-                <div class="form-item">
-                    <label for="message">Avez-vous des commentaires ?</label>
-                    <textarea name="message" id="message" class="text"><?php echo htmlentities($message); ?></textarea>
-                    <span class="message error"><?php echo $msgMessage; ?></span>
-                </div>
-
-                <p><button type="submit" id="btnSubmit" name="btnSubmit">Confirmez votre réservation</button></p>
-            </form>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <div class="form-item">
+            <label for="naam">Votre nom</label>
+            <input id="naam" type="text" name="naam" value="<?php echo htmlentities($naam); ?>">
+            <span class="message error"><?php echo $msgNaam; ?></span>
         </div>
-    </main>
+       
+        <div class="form-item">
+            <label for="geslacht">Sexe</label>
+            <input id="man" name="geslacht" value="0" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "man") {echo "checked";} ?>>Homme
+            <input id="vrouw" name="geslacht" value="1" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "vrouw") {echo "checked";} ?>>Vrouw
+            <input id="anders" name="geslacht" value="2" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "anders") {echo "checked";} ?>>Autrement
+            <span class="message error"><?php echo $msgGeslacht; ?></span>
+        </div>
+
+        <div class="form-item">
+            <label for="email">Courrier électronique</label>
+            <input id="email" type="email" name="email" value="<?php echo htmlentities($email); ?>">
+            <span class="message error"><?php echo $msgEmail; ?></span>
+        </div>
+
+        <div class="form-item">
+            <label for="bericht">Votre message</label>
+            <textarea name="bericht" id="bericht" cols="30" rows="10" value="<?php echo htmlentities($email); ?>"></textarea>
+            <span class="message error"><?php echo $msgBericht; ?></span>
+        </div>
+        
+        <p><button type="submit" id="btnSubmit" name="btnSubmit">Soumettre</button></p>
+    </form>
+
     <footer class="center">
         Copyright &copy; Restaurant Multicultura - Gebroeders de Smetstraat 1, 9000 Gand | est 2021
     </footer>
