@@ -33,11 +33,11 @@
                     <li class="navbar__item"><a class="navbar__links" href="reservaties/"><i class="fas fa-utensils"></i> Reserveren</a></li>
                     <li class="navbar_item">
                         <div class="drop-menu">
-                            <div class="selected-drop-item">More info <i class="fas fa-caret-down"></i></div>
+                            <div class="selected-drop-item"><i class="fas fa-question-circle"></i> Info <i class="fas fa-caret-down"></i></div>
                             <ul>
                             <li class="navbar__item"><a class="navbar__links" href="about/"><i class="fas fa-info-circle"></i> About us</a></li>
                             <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant"><i class="fas fa-code"></i> Project info</a></li>
-                            <li class="navbar__item"><a class="navbar__links" href="contact/"><i class="fas fa-question-circle"></i> Contact us</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="contact/"><i class="far fa-comment-dots"></i> Contact us</a></li>
                             </ul>
                         </div>
                     </li>
@@ -49,7 +49,7 @@
                     ?>
                     <li class="navbar_item">
                         <div class="drop-menu">
-                            <div class="selected-drop-item">Administrate <i class="fas fa-caret-down"></i></div>
+                            <div class="selected-drop-item"><i class="fas fa-tools"></i> Administrate <i class="fas fa-caret-down"></i></div>
                             <ul>
                                 <li><a href="./admin/reservaties/">Reservaties</a></li>
                                 <li><a href="./admin/contact/">Contact</a></li>
