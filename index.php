@@ -41,9 +41,9 @@
                             </ul>
                         </div>
                     </li>
-                    <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){echo '<li class="navbar__item"><a class="navbar__links" href="account/">Account</a></li>';}?>
-                    <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) 
-                        {echo '<li class="navbar__item"><a class="navbar__links" href="logout/"><i class="fas fa-user-circle"></i> Logout</a></li>';} 
+                    <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                        echo '<li class="navbar__item"><a class="navbar__links" href="account/">Account</a></li>';
+                        echo '<li class="navbar__item"><a class="navbar__links" href="logout/"><i class="fas fa-user-circle"></i> Logout</a></li>';} 
                     else 
                         {echo '<li class="navbar__item"><a class="navbar__links" href="login/"><i class="fas fa-user-circle"></i> Login</a></li>';}
                     ?>
