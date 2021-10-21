@@ -189,3 +189,8 @@
         Copyright &copy; Restaurant Multicultura - Gebroeders de Smetstraat 1, 9000 Gent | est 2021
     </footer>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="menu.js"></script>
+<script src="static/chat.js"></script>
+<script src="static/responses.js"></script>
+</html>
