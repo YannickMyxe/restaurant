@@ -87,7 +87,7 @@ if (isset($_POST['btnSubmit'])) {
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/map.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="../img/logo.png">
 </head>
 <body>
     <header>
@@ -112,7 +112,8 @@ if (isset($_POST['btnSubmit'])) {
         </nav>
     </header>
 
-    <h1>Contacteer ons</h1>
+    <main>
+    <h1 class="left-align">Contacteer ons</h1>
     <p>Als u vragen hebt, kunt u ons contacteren door onderstaand formulier in te vullen.</p>
 
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
@@ -121,7 +122,6 @@ if (isset($_POST['btnSubmit'])) {
             <input id="naam" type="text" name="naam" value="<?php echo htmlentities($naam); ?>">
             <span class="message error"><?php echo $msgNaam; ?></span>
         </div>
-       
         <div class="form-item">
             <label for="geslacht">Geslacht</label>
             <input id="man" name="geslacht" value="0" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "man") {echo "checked";} ?>>Man
@@ -144,7 +144,7 @@ if (isset($_POST['btnSubmit'])) {
         
         <p><button type="submit" id="btnSubmit" name="btnSubmit">Submit</button></p>
     </form>
-
+    </main>
     <footer class="center">
         Copyright &copy; Restaurant Multicultura - Gebroeders de Smetstraat 1, 9000 Gent | est 2021
     </footer>

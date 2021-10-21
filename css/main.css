@@ -301,7 +301,7 @@ textarea
     margin-bottom: 1.5em;
 }
 
-input:read-only
+input:read-only, textarea:read-only
 {
     background: var(--cl-primary-800);
     color: var(--cl-primary-100);
@@ -403,6 +403,10 @@ label{
 {
     display: flex;
     flex-wrap: wrap;
+    flex: 1 1 20em;
+    gap: 1em;
+    justify-content: center;
+    margin-bottom: 0.5em;
 }
 
 .reservatie-card
@@ -411,9 +415,7 @@ label{
     color: var(--cl-primary-100);
     border: 1px solid var(--cl-primary-200);
     border-radius: 10px;
-    margin: 0.25em;
-    min-width: 25em;
-    width: 30em;
+    padding-right: 1em;
     overflow-x: scroll;
 }
 
