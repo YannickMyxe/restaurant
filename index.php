@@ -10,7 +10,7 @@
     <title>Home | Multicultura</title>
     <link rel="stylesheet" href="static/chat.css">
     <link rel="stylesheet" href="static/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/menu.css">
@@ -29,27 +29,27 @@
                     <span class="bar"></span>
                 </div>
                 <ul class="navbar__menu">
-                    <li class="navbar__item"><a class="navbar__links current-page" href="./">Home</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="reservaties/">Reserveren</a></li>
+                    <li class="navbar__item"><a class="navbar__links current-page" href="./"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="reservaties/"><i class="fas fa-utensils"></i> Reserveren</a></li>
                     <li class="navbar_item">
-                        <div class="lang-menu">
-                            <div class="selected-lang">More info</div>
+                        <div class="drop-menu">
+                            <div class="selected-drop-item">More info <i class="fas fa-caret-down"></i></div>
                             <ul>
-                            <li class="navbar__item"><a class="navbar__links" href="about/">About us</a></li>
-                            <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project info</a></li>
-                            <li class="navbar__item"><a class="navbar__links" href="contact/">Contact us</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="about/"><i class="fas fa-info-circle"></i> About us</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant"><i class="fas fa-code"></i> Project info</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="contact/"><i class="fas fa-question-circle"></i> Contact us</a></li>
                             </ul>
                         </div>
                     </li>
                     <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                        echo '<li class="navbar__item"><a class="navbar__links" href="account/">Account</a></li>';
-                        echo '<li class="navbar__item"><a class="navbar__links" href="logout/"><i class="fas fa-user-circle"></i> Logout</a></li>';} 
+                        echo '<li class="navbar__item"><a class="navbar__links" href="account/"><i class="fas fa-user"></i> Account</a></li>';
+                        echo '<li class="navbar__item"><a class="navbar__links" href="logout/"><i class="fas fa-sign-out-alt"></i> Logout</a></li>';} 
                     else 
-                        {echo '<li class="navbar__item"><a class="navbar__links" href="login/"><i class="fas fa-user-circle"></i> Login</a></li>';}
+                        {echo '<li class="navbar__item"><a class="navbar__links" href="login/"><i class="fas fa-sign-in-alt"></i> Login</a></li>';}
                     ?>
                     <li class="navbar_item">
-                        <div class="lang-menu">
-                            <div class="selected-lang">Administrate</div>
+                        <div class="drop-menu">
+                            <div class="selected-drop-item">Administrate <i class="fas fa-caret-down"></i></div>
                             <ul>
                                 <li><a href="./admin/reservaties/">Reservaties</a></li>
                                 <li><a href="./admin/contact/">Contact</a></li>
@@ -59,8 +59,8 @@
                         </div>
                     </li>
                     <li class="navbar_item">
-                        <div class="lang-menu">
-                            <div class="selected-lang ne">Nederlands</div>
+                        <div class="drop-menu">
+                            <div class="selected-drop-item ne">Nederlands</div>
                             <ul>
                                 <li><a class="ne" href="../">Nederlands</a></li>
                                 <li><a class="fr" href="fr/">Frans</a></li>
