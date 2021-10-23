@@ -106,8 +106,8 @@ if (isset($_POST['btnSubmit'])) {
                     <li class="navbar__item"><a class="navbar__links" href="../../de/Kontakt">Kontakt</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="login/"><i class="fas fa-user-circle"></i> Anmeldung</a></li>
                     <li class="navbar_item">
-                        <div class="lang-menu">
-                            <div class="selected-lang de">
+                        <div class="drop-menu">
+                            <div class="selected-drop-item de">
                                 Deutsch
                             </div>
                             <ul>

@@ -108,8 +108,8 @@ if (isset($_POST['btnSubmit'])) {
                     <li class="navbar__item"><a class="navbar__links current-page" href="../contact/contact.php">Contact</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../login/"><i class="fas fa-user-circle"></i> Connexion</a></li>
                     <li class="navbar_item">
-                        <div class="lang-menu">
-                            <div class="selected-lang fr">
+                        <div class="drop-menu">
+                            <div class="selected-drop-item fr">
                                 Français
                             </div>
                             <ul>

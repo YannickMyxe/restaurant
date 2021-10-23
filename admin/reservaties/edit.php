@@ -135,8 +135,8 @@ if (isset($_POST['btnSubmit'])) {
                         {echo '<li class="navbar__item"><a class="navbar__links" href="../../login/"><i class="fas fa-user-circle"></i> Login</a></li>';}
                     ?>
                     <li class="navbar_item">
-                        <div class="lang-menu">
-                            <div class="selected-lang">Administrate</div>
+                        <div class="drop-menu">
+                            <div class="selected-drop-item">Administrate</div>
                             <ul>
                                 <li><a href="../reservaties/">Reservaties</a></li>
                                 <li><a href="../contact/">Contact</a></li>
@@ -145,8 +145,8 @@ if (isset($_POST['btnSubmit'])) {
                         </div>
                     </li>
                     <li class="navbar_item">
-                        <div class="lang-menu">
-                            <div class="selected-lang ne">Nederlands</div>
+                        <div class="drop-menu">
+                            <div class="selected-drop-item ne">Nederlands</div>
                             <ul>
                                 <li><a class="ne" href="../../../">Nederlands</a></li>
                                 <li><a class="fr" href="../../fr/">Frans</a></li>
