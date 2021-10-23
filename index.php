@@ -152,7 +152,7 @@
 
         <div class="chat-bar-collapsible">
             <button id="chat-button" type="button" class="collapsible">Chat met ons!
-                <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+                <i id="chat-icon" style="color: #fff;" class="fas fa-comment"></i>
             </button>
 
             <div class="content">
@@ -171,8 +171,8 @@
                                 </div>
 
                                 <div class="chat-bar-icons">
-                                    <i class="chat-icon2 fa fa-fw fa-heart" style="color: crimson;" onclick="heartButton()"></i>
-                                    <i class="chat-icon2 fa fa-fw fa-send" style="color: #333;" onclick="sendButton()"></i>
+                                    <i class="chat-icon2 fas fa-heart" style="color: crimson;" onclick="heartButton()"></i>
+                                    <i class="chat-icon2 fas fa-paper-plane" style="color: #333;" onclick="sendButton()"></i>
                                 </div>
                             </div>
 

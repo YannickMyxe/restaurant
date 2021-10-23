@@ -384,19 +384,19 @@ label{
 }
 
 .fr:before{
-    background-image: url(https://www.countryflags.io/fr/flat/32.png);
+    background-image: url(../img/vlagfr.png);
 }
 
 .de:before{
-    background-image: url(https://www.countryflags.io/de/flat/32.png);
+    background-image: url(../img/vlagde.png);
 }
 
 .en:before{
-    background-image: url(https://www.countryflags.io/us/flat/32.png);
+    background-image: url(../img/vlagvk.png);
 }
 
 .ne:before{
-    background-image: url(https://www.countryflags.io/be/flat/32.png);
+    background-image: url(../img/vlagne.png);
 }
 
 .reservatie-cards

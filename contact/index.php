@@ -131,10 +131,10 @@ if (isset($_POST['btnSubmit'])) {
                         <div class="drop-menu">
                             <div class="selected-drop-item ne">Nederlands</div>
                             <ul>
-                                <li><a class="ne" href="../">Nederlands</a></li>
-                                <li><a class="fr" href="fr/">Frans</a></li>
-                                <li><a class="en" href="en/">Engels</a> </li>
-                                <li><a class="de" href="de/">Duits</a></li>
+                                <li><a class="ne" href="../contact">Nederlands</a></li>
+                                <li><a class="fr" href="../fr/contact.php">Frans</a></li>
+                                <li><a class="en" href="../en/contact">Engels</a> </li>
+                                <li><a class="de" href="../de/Kontakt">Duits</a></li>
                             </ul>
                         </div>
                     </li>
