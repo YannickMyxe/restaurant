@@ -26,13 +26,13 @@
                     <span class="bar"></span>
                 </div>
                 <ul class="navbar__menu">
-                    <li class="navbar__item"><a class="navbar__links current-page" href="../"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../"><i class="fas fa-home"></i> Home</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../reservaties/"><i class="fas fa-utensils"></i> Reserveren</a></li>
                     <li class="navbar_item">
                         <div class="drop-menu">
                             <div class="selected-drop-item"><i class="fas fa-question-circle"></i> Info <i class="fas fa-caret-down"></i></div>
                             <ul>
-                            <li class="navbar__item"><a class="navbar__links" href="../about/"><i class="fas fa-info-circle"></i> About us</a></li>
+                            <li class="navbar__item"><a class="navbar__links current-page" href="../about/"><i class="fas fa-info-circle"></i> About us</a></li>
                             <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant"><i class="fas fa-code"></i> Project info</a></li>
                             <li class="navbar__item"><a class="navbar__links" href="../contact/"><i class="far fa-comment-dots"></i> Contact us</a></li>
                             </ul>

@@ -98,7 +98,7 @@ if (isset($_POST['btnSubmit'])) {
                     <span class="bar"></span>
                 </div>
                 <ul class="navbar__menu">
-                    <li class="navbar__item"><a class="navbar__links current-page" href="../"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../"><i class="fas fa-home"></i> Home</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="../reservaties/"><i class="fas fa-utensils"></i> Reserveren</a></li>
                     <li class="navbar_item">
                         <div class="drop-menu">
@@ -106,7 +106,7 @@ if (isset($_POST['btnSubmit'])) {
                             <ul>
                             <li class="navbar__item"><a class="navbar__links" href="../about/"><i class="fas fa-info-circle"></i> About us</a></li>
                             <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant"><i class="fas fa-code"></i> Project info</a></li>
-                            <li class="navbar__item"><a class="navbar__links" href="../contact/"><i class="far fa-comment-dots"></i> Contact us</a></li>
+                            <li class="navbar__item"><a class="navbar__links current-page" href="../contact/"><i class="far fa-comment-dots"></i> Contact us</a></li>
                             </ul>
                         </div>
                     </li>

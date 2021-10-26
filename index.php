@@ -29,7 +29,7 @@
                     <span class="bar"></span>
                 </div>
                 <ul class="navbar__menu">
-                    <li class="navbar__item"><a class="navbar__links current-page" href="./"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="navbar__item"><a class="navbar__links current-page" href="../"><i class="fas fa-home"></i> Home</a></li>
                     <li class="navbar__item"><a class="navbar__links" href="reservaties/"><i class="fas fa-utensils"></i> Reserveren</a></li>
                     <li class="navbar_item">
                         <div class="drop-menu">

@@ -79,7 +79,7 @@ if (isset($_POST['btnSubmit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réservations | Multicultura</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/menu.css">
@@ -88,49 +88,58 @@ if (isset($_POST['btnSubmit'])) {
     <link rel="icon" href="../img/logo.png">
 </head>
 <body>
-    <header>
+<header>
         <nav class="navbar">
             <div class="navbar__container">
-                <a class="logo" href="../"><img src="../img/logo.png" alt="LOGO"></a>
+                <a class="logo" href="./"><img src="./img/logo.png" alt="LOGO"></a>
                 <div class="navbar__toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
-
                 <ul class="navbar__menu">
-                    <li class="navbar__item"><a class="navbar__links" href="../fr">Accueil</a></li>
-                    <li class="navbar__item"><a class="navbar__links current-page" href="../fr/reservaties.php">Réserver</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../about/">À propos de</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Projet</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../fr/contact.php">Contacter</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="login/"><i class="fas fa-user-circle"></i> Connexion</a></li>
+                    <li class="navbar__item"><a class="navbar__links" href="../fr"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li class="navbar__item"><a class="navbar__links current-page" href="../fr/reservaties.php"><i class="fas fa-utensils"></i> Réservation</a></li>
                     <li class="navbar_item">
                         <div class="drop-menu">
-                            <div class="selected-drop-item fr">
-                                Français
-                            </div>
+                            <div class="selected-drop-item"><i class="fas fa-question-circle"></i> Info <i class="fas fa-caret-down"></i></div>
                             <ul>
-                                <li>
-                                    <a class="fr" href="../fr/reservaties.php">Français</a>
-                                </li>
-
-                                <li>
-                                    <a class="ne" href="../reservaties">Néerlandais</a>
-                                </li>
-
-                                <li>
-                                    <a class="en" href="../en/reservations/">Anglais</a>
-                                </li>
-
-                                <li>
-                                    <a class="de" href="../de/buchen">Allemand</a>
-                                </li>
+                            <li class="navbar__item"><a class="navbar__links" href="../about/"><i class="fas fa-info-circle"></i> A propos de nous</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant"><i class="fas fa-code"></i> Infos sur le projet</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="../fr/contact.php"><i class="far fa-comment-dots"></i> Nous contacter</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                        echo '<li class="navbar__item"><a class="navbar__links" href="account/"><i class="fas fa-user"></i> </a></li>';
+                        echo '<li class="navbar__item"><a class="navbar__links" href="logout/"><i class="fas fa-sign-out-alt"></i> Deconnexion</a></li>';} 
+                    else 
+                        {echo '<li class="navbar__item"><a class="navbar__links" href="../login/"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>';}
+                    ?>
+                    <li class="navbar_item">
+                        <div class="drop-menu">
+                            <div class="selected-drop-item"><i class="fas fa-tools"></i> Administrations <i class="fas fa-caret-down"></i></div>
+                            <ul>
+                                <li><a href="../admin/reservaties/">Réservations</a></li>
+                                <li><a href="../admin/contact/">Contact</a></li>
+                                <li><a href="../admin/accounts/">Comptes</a> </li>
+                                <li><a href="../admin/roles/">Rolls</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="navbar_item">
+                        <div class="drop-menu">
+                            <div class="selected-drop-item fr">Français</div>
+                            <ul>
+                                <li><a class="fr" href="../fr/reservaties.php">Français</a></li>
+                                <li><a class="ne" href="../reservaties">Néerlandais</a></li>
+                                <li><a class="en" href="../en/reservations/">Anglais</a></li>
+                                <li><a class="de" href="../de/Buchen/">Allemand</a></li>
                             </ul>
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div>    
         </nav>
     </header>
     <main>
