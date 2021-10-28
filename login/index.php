@@ -102,6 +102,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Close connection
     unset($pdo);
+
+    /* Attempt to connect to MySQL database */
+    try{
+        $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
+        // Set the PDO error mode to exception
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch(PDOException $e){
+        die("ERROR: Could not connect. " . $e->getMessage());
+    }
+
+    // Prepare a select statement
+    $stmt = $pdo->prepare("SELECT roles.id, roles.name, roles.description, roles.rolenummer FROM rolelink, roles WHERE rolelink.accountID=? && rolelink.RoleID = roles.id");
+    $stmt->execute([$_SESSION["id"]]); 
+    $user_roles = $stmt->fetchall();
+    $_SESSION['roles'] = $user_roles;
+
+    // Close connection
+    unset($pdo);
 }
 ?>
 
