@@ -26,16 +26,19 @@
     </header>
     <main>
         <div class="leftalign">
-            <h1>Restaurant multicultura</h1>
+            <h1>Restaurant Multicultura</h1>
             <div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora eaque, vitae mollitia cupiditate porro id! Culpa, corporis enim. Quam, hic, quaerat dignissimos quasi distinctio facere deleniti eligendi recusandae soluta similique voluptate corrupti delectus officiis, voluptates qui possimus nisi harum impedit mollitia? Optio at corrupti consectetur maxime id delectus quis fugiat!
+                    Welkom bij restaurant Multicultura! Wij zijn gespesializeerd in het bereiden van gerechten uit meerdere culturen. Wij bereiden onze gerechten met de verste ingredienten van een lokale bedrijven.
                 </p>
             </div>
         </div>
         <div class="leftalign">
-            <h2>info</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat facilis, placeat, saepe recusandae, architecto possimus voluptas fuga totam libero quae quos delectus quasi rerum ullam dolores minima? Magni, veniam?</p>
+            <h2>Meer info</h2>
+            <p> 
+                Wil je een tafel reserveren?
+                Wil je meer weten over ons bedrijf of over ons restaurant?
+            </p>
         </div>
         <section class="menu">
             <h2 class="center">Menukaart</h2>
@@ -44,11 +47,11 @@
                 <div class="menu-section">
                     <div class="menu-item">
                         <h4>Pasta</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error quibusdam iste pariatur debitis? Accusamus, tenetur esse ex blanditiis voluptatem aut sequi excepturi tempora fuga voluptate quidem praesentium ab deleniti corrupti!</p>
+                        <p>Onze pasta lijkt misschien wel op een doodnormale pasta van bij je thuis. Maar vergis je niet! Deze pasta is gemaakt met onze geheime kruidenmix, zo accentuurt hij onze saus zodat deze de perfecte smaak krijgt. Hou je liever van iets pikkants? Geniet dan van onze 'Diablo' varriant, met extra veel passie en pit!</p>
                     </div>
                     <div class="menu-item">
                         <h4>Pizza</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error quibusdam iste pariatur debitis? Accusamus, tenetur esse ex blanditiis voluptatem aut sequi excepturi tempora fuga voluptate quidem praesentium ab deleniti corrupti!</p>
+                        <p>Onze pizza's worden bereid op de klassieke Italiaanse wijze, deze worden in een gemodernizeerde oude steen over gebakken, zo krijgen ze een krokant korstje. Onze speciale mix van ingredienten zorgt voor een unieke pizza zoals je die nergens anders zult vinden.</p>
                     </div>
                     <div class="menu-item">
                         <h4>menu item</h4>
@@ -96,7 +99,7 @@
         <section class="location">
             <h2>Locatie</h2>
             <div class="map-wrapper">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, tempora quisquam officia sequi debitis possimus inventore. Minima, temporibus iusto. Sit.</p>
+                <p>Hier vind je ons adress. Zo kan je ons gemakkelijk vinden!</p>
                 <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2299.513860969966!2d3.7087566727579064!3d51.05978203806784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3710281d9c345%3A0xc50bd6d3515ba4db!2sKU%20Leuven%20Technologiecampus%20Gent!5e0!3m2!1sen!2sbe!4v1632398621501!5m2!1sen!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> 
             </div>
         </section>
