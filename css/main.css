@@ -438,3 +438,63 @@ i{
 .drop-menu i{
     padding-top: 0.50em;
 }
+
+.main-container{
+    display: flex;
+}
+
+.main-about{
+    width: var(--width-about);
+}
+
+.image-about{
+    width: var(--width-about);
+    margin-top: 45px;
+    border-radius: 25px;
+    transition: .5s ease-out;
+}
+
+.image-about:hover{
+    transform: scale(1.060);
+}
+
+.sub1-container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.sub1-about{
+    margin-top: 80px;
+    width: var(--width-about);
+}
+
+.image2-about{
+    width: var(--width-about);
+    margin-top: 45px;
+    margin-right: 50px;
+    border-radius: 25px;
+    transition: .5s ease-out;
+}
+
+.image2-about:hover{
+    transform: scale(1.060);
+}
+
+.sub2-container{
+    margin-top: 30px;
+    display: flex;
+}
+
+.sub2-about{
+    margin-top: 170px;
+    width: var(--width-about);
+}
+
+.locatie-map{
+    width: var(--width-about);
+    margin-top: 45px;
+    margin-right: 50px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+}
