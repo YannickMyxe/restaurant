@@ -1,9 +1,9 @@
 <?php
 // Initialize the session
 session_start();
-
+include "../../php/isAdmin.php";
 // Check if the user is already logged in, if not then redirect him to loin page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false){
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false || !isAdmin()){
     header("location: ../../login");
     exit;
 }
