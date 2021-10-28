@@ -19,7 +19,11 @@ define('DB_NAME', 'multicultura');
 
 date_default_timezone_set('Europe/Brussels');
 
-$id = (isset($_GET["id"]))? $_GET["id"] : 0;
+$id = 1;
+if (isset($_GET["id"]) && $_GET["id"] > 1)
+{
+    $id = $_GET["id"];
+}
 
 /* Attempt to connect to MySQL database */
 try{
@@ -34,14 +38,6 @@ try{
 $stmt = $pdo->prepare("SELECT roles.name, roles.description FROM rolelink, roles WHERE rolelink.accountID=? && rolelink.RoleID = roles.id");
 $stmt->execute([$id]); 
 $user_roles = $stmt->fetchall();
-
-if(!empty($user_roles))
-{
-    foreach($user_roles as $rol)
-    {
-        echo "<p>".$rol['name'].": ".$rol['description']."</p>";
-    }
-}
 
 // Close connection
 unset($pdo);
@@ -218,6 +214,16 @@ unset($pdo)
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <label for="id">ID</label><input name="id" type="number" readonly value="<?php echo htmlentities($id);?>"></p>
                     <label for="naam">Naam</label><input name="naam"  type="text" readonly value="<?php echo htmlentities($naam);?>"></p>
+                    <div> <h2>Rollen gebruiker</h2> 
+                    <?php
+                    if(!empty($user_roles))
+                    {
+                        foreach($user_roles as $rol)
+                        {
+                            echo "<p>".$rol['name'].": ".$rol['description']."</p>";
+                        }
+                    }
+                    ?></div>
                     <label for="role-select">Choose role</label>
                     <select name="roles" id="role-select">
                         <option value="" disabled <?php if(!isset($_POST['roles'])) echo "selected"; ?>>--Please choose an option--</option>
@@ -237,7 +243,7 @@ unset($pdo)
                 <button type="submit" id="btnSubmit-id" name="btnID" class="button">Verander naar id</button>
             </form>
             <p>
-                <a class="button" href="./?id=<?php if($id == 1){echo 1;}else{echo ($id-1);} ?>"> << vorige </a> 
+                <a class="button" href="./?id=<?php if($id <= 1){echo 1;}else{echo ($id-1);} ?>"> << vorige </a> 
                 <a class="button" href="./?id=<?php echo ($id+1);?>"> >> volgende </a>
             </p>
         </div>
