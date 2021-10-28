@@ -93,7 +93,7 @@ if (isset($_POST['btnSubmit'])) {
 <header>
         <nav class="navbar">
             <div class="navbar__container">
-                <a class="logo" href="./"><img src="../img/logo.png" alt="LOGO"></a>
+                <a class="logo" href="../"><img src="../img/logo.png" alt="LOGO"></a>
                 <div class="navbar__toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
