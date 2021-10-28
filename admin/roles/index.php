@@ -19,14 +19,40 @@ define('DB_NAME', 'multicultura');
 
 date_default_timezone_set('Europe/Brussels');
 
+$id = (isset($_GET["id"]))? $_GET["id"] : 0;
+
+/* Attempt to connect to MySQL database */
+try{
+    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
+    // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e){
+    die("ERROR: Could not connect. " . $e->getMessage());
+}
+
+// Prepare a select statement
+$stmt = $pdo->prepare("SELECT roles.name, roles.description FROM rolelink, roles WHERE rolelink.accountID=? && rolelink.RoleID = roles.id");
+$stmt->execute([$id]); 
+$user_roles = $stmt->fetchall();
+
+if(!empty($user_roles))
+{
+    foreach($user_roles as $rol)
+    {
+        echo "<p>".$rol['name'].": ".$rol['description']."</p>";
+    }
+}
+
+// Close connection
+unset($pdo);
+
+
 #region GET USER
 // #set name/id
 if (isset($_POST['gotoid']) && $_POST['gotoid'] !== 0){ 
     $location = "location: ./?id=".$_POST['gotoid'];
     header($location);
 }
-
-$id = (isset($_GET["id"]))? $_GET["id"] : 0;
 
 if (!isset($_POST['naam'])){
     /* Attempt to connect to MySQL database */
