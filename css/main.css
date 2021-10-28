@@ -42,7 +42,7 @@ img{
     display: flex;
     justify-content: space-between;
     height: 3.25rem;
-    z-index: 1;
+    z-index: 999;
     width: 100%;
 }
 

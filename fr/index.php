@@ -32,7 +32,7 @@
                         <div class="drop-menu">
                             <div class="selected-drop-item"><i class="fas fa-question-circle"></i> Info <i class="fas fa-caret-down"></i></div>
                             <ul>
-                            <li class="navbar__item"><a class="navbar__links" href="about/"><i class="fas fa-info-circle"></i> À propos de</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="../fr/about.php"><i class="fas fa-info-circle"></i> À propos de</a></li>
                             <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant"><i class="fas fa-code"></i> Infos sur le projet</a></li>
                             <li class="navbar__item"><a class="navbar__links" href="../fr/contact.php"><i class="far fa-comment-dots"></i> Nous contacter</a></li>
                             </ul>

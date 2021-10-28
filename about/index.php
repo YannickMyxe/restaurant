@@ -59,10 +59,10 @@
                         <div class="drop-menu">
                             <div class="selected-drop-item ne">Nederlands</div>
                             <ul>
-                                <li><a class="ne" href="../">Nederlands</a></li>
-                                <li><a class="fr" href="fr/">Frans</a></li>
-                                <li><a class="en" href="en/">Engels</a> </li>
-                                <li><a class="de" href="de/">Duits</a></li>
+                                <li><a class="ne" href="../about/">Nederlands</a></li>
+                                <li><a class="fr" href="../fr/about.php">Frans</a></li>
+                                <li><a class="en" href="../en/about/">Engels</a> </li>
+                                <li><a class="de" href="../de/uber">Duits</a></li>
                             </ul>
                         </div>
                     </li>
