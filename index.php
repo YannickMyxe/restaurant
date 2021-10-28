@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include './php/isAdmin.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,17 +48,21 @@
                     else 
                         {echo '<li class="navbar__item"><a class="navbar__links" href="login/"><i class="fas fa-sign-in-alt"></i> Login</a></li>';}
                     ?>
-                    <li class="navbar_item">
-                        <div class="drop-menu">
-                            <div class="selected-drop-item"><i class="fas fa-tools"></i> Administrate <i class="fas fa-caret-down"></i></div>
-                            <ul>
-                                <li><a href="./admin/reservaties/">Reservaties</a></li>
-                                <li><a href="./admin/contact/">Contact</a></li>
-                                <li><a href="./admin/accounts/">Accounts</a> </li>
-                                <li><a href="./admin/roles/">Rollen</a> </li>
-                            </ul>
-                        </div>
-                    </li>
+                    <?php
+                        if(isAdmin()===true){echo '
+                            <li class="navbar_item">
+                            <div class="drop-menu">
+                                <div class="selected-drop-item"><i class="fas fa-tools"></i> Administrate <i class="fas fa-caret-down"></i></div>
+                                <ul>
+                                    <li><a href="./admin/reservaties/">Reservaties</a></li>
+                                    <li><a href="./admin/contact/">Contact</a></li>
+                                    <li><a href="./admin/accounts/">Accounts</a> </li>
+                                    <li><a href="./admin/roles/">Rollen</a> </li>
+                                </ul>
+                            </div>
+                        </li>
+                        ';}
+                    ?>
                     <li class="navbar_item">
                         <div class="drop-menu">
                             <div class="selected-drop-item ne">Nederlands</div>
