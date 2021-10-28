@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 20 okt 2021 om 18:15
+-- Gegenereerd op: 28 okt 2021 om 14:35
 -- Serverversie: 5.7.31
 -- PHP-versie: 7.3.21
 
@@ -63,7 +63,14 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `email` varchar(255) NOT NULL,
   `bericht` varchar(255) NOT NULL,
   PRIMARY KEY (`messageID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `contact`
+--
+
+INSERT INTO `contact` (`messageID`, `naam`, `geslacht`, `email`, `bericht`) VALUES
+(1, 'Dylan_bot-2', 1, 'dylan_bot@gmail.com', 'dylan bot was here!');
 
 -- --------------------------------------------------------
 
@@ -108,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `reservaties` (
 --
 
 INSERT INTO `reservaties` (`ID`, `naam`, `aantal`, `datum`, `opmerking`, `added_on`) VALUES
-(1, 'Yannick', 1, '2021-10-22 12:20:00', '', '2021-10-14 16:08:29'),
+(1, 'Yannick', 1, '2021-10-22 12:20:00', 'alergisch voor noten', '2021-10-14 16:08:29'),
 (2, 'Dylan_bot', 5, '2021-10-22 18:00:00', 'Nee, fuck off, OOF!', '2021-10-14 16:09:11'),
 (3, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 1, '2021-10-14 11:11:00', '', '2021-10-14 16:14:44'),
 (4, 'dylan_bot', 12, '2021-10-01 15:10:00', 'geen opmerking toegevoegd', '2021-10-14 16:16:35'),
@@ -151,7 +158,18 @@ CREATE TABLE IF NOT EXISTS `rolelink` (
   `accountID` int(11) NOT NULL,
   `RoleID` int(11) NOT NULL,
   PRIMARY KEY (`linkID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `rolelink`
+--
+
+INSERT INTO `rolelink` (`linkID`, `accountID`, `RoleID`) VALUES
+(1, 1, 2),
+(9, 1, 7),
+(3, 1, 8),
+(8, 4, 2),
+(6, 1, 5);
 
 -- --------------------------------------------------------
 
