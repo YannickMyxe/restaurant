@@ -147,6 +147,17 @@
     <main>
         <h1>Jouw Account</h1>
         <p>Hier kan je jouw gegevens aanpassen indien er wijzegingen nodig zijn.</p>
+
+        <h2>Mijn rollen</h2>
+        <?php
+            if(isset($_SESSION["loggedin"]) && $_SESSION['loggedin'] === true) {
+                foreach($_SESSION['roles'] as $role)
+                {
+                    echo '<p>'.$role['name'].' ['.$role['id'].'] : '.$role['description'].'</p>';
+                }
+            }
+        ?>
+
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'editor'){
                 echo'
