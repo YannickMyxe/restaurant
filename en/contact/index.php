@@ -136,7 +136,7 @@ if (isset($_POST['btnSubmit'])) {
             </div>
         </nav>
     </header>
-
+    <main>
     <h1>Contact us</h1>
     <p>If you have any questions, please contact us by filling out the form below.</p>
 
@@ -146,7 +146,6 @@ if (isset($_POST['btnSubmit'])) {
             <input id="naam" type="text" name="naam" value="<?php echo htmlentities($naam); ?>">
             <span class="message error"><?php echo $msgNaam; ?></span>
         </div>
-       
         <div class="form-item">
             <label for="geslacht">Gender</label>
             <input id="man" name="geslacht" value="0" type="radio" <?php if(isset($_POST['gl']) && $_POST['gl'] === "man") {echo "checked";} ?>>Male
@@ -169,7 +168,7 @@ if (isset($_POST['btnSubmit'])) {
         
         <p><button type="submit" id="btnSubmit" name="btnSubmit">Submit</button></p>
     </form>
-
+    </main>
     <footer class="center">
         Copyright &copy; Restaurant Multicultura - Gebroeders de Smetstraat 1, 9000 Ghent | est 2021
     </footer>
