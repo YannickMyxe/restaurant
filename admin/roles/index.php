@@ -2,7 +2,7 @@
 // Initialize the session
 session_start();
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
+// Check if the user is already logged in, if not then redirect him to loin page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false){
     header("location: ../../login");
     exit;
@@ -19,6 +19,7 @@ define('DB_NAME', 'multicultura');
 
 date_default_timezone_set('Europe/Brussels');
 
+#region GET USER
 // #set name/id
 if (isset($_POST['gotoid']) && $_POST['gotoid'] !== 0){ 
     $location = "location: ./?id=".$_POST['gotoid'];
@@ -47,7 +48,9 @@ if (!isset($_POST['naam'])){
     // Close connection
     unset($pdo);
 }
+#endregion GET USER
 
+#region ROLES
 // #get roles
 $data = '';
 
@@ -68,7 +71,10 @@ if(empty($username_err) && empty($password_err)){
 }
 // Close connection
 unset($pdo);
+#endregion ROLES
 
+#region SET ROLES 
+//SET ROLES SECTION 
 $naam = isset($_POST['naam']) ? (string)$_POST['naam'] : $user['username'];
 $id = isset($_POST['id']) ? (string)$_POST['id'] : $user['id'];
 
@@ -103,7 +109,7 @@ if(isset($_POST['btnSubmit'])){
 
         // the query succeeded, redirect to this very same page
         if ($pdo->lastInsertId() !== 0) {
-            header('Location: ../');
+            header('Location: ./?id='.$id);
             exit();
         } // the query failed
         else {
@@ -113,6 +119,9 @@ if(isset($_POST['btnSubmit'])){
     }
 
 }
+unset($pdo)
+#endregion SET ROLES
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -178,7 +187,7 @@ if(isset($_POST['btnSubmit'])){
     </header>
     <main>
         <div class="leftalign">
-            <h1>Rollen</h1>
+            <h1>Rollen aanpassen</h1>
             <div class="">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <label for="id">ID</label><input name="id" type="number" readonly value="<?php echo htmlentities($id);?>"></p>
