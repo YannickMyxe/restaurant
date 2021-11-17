@@ -13,7 +13,7 @@ echo '
                     <li class="navbar__item"><a class="navbar__links" href="/restaurant/de/buchen"><i class="fas fa-utensils"></i> Buchung</a></li>
                     <li class="navbar_item">
                         <div class="drop-menu">
-                            <div class="selected-drop-item"><i class="fas fa-question-circle"></i> Info <i class="fas fa-caret-down"></i></div>
+                            <div class="selected-drop-item"><i class="fas fa-question-circle"></i> Infos <i class="fas fa-caret-down"></i></div>
                             <ul>
                             <li class="navbar__item"><a class="navbar__links" href="/restaurant/de/uber"><i class="fas fa-info-circle"></i> Über</a></li>
                             <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant"><i class="fas fa-code"></i> Projekt</a></li>
@@ -22,8 +22,8 @@ echo '
                         </div>
                     </li>';
                     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                        echo '<li class="navbar__item"><a class="navbar__links" href="/restaurant/de/account/"><i class="fas fa-user"></i> Account</a></li>';
-                        echo '<li class="navbar__item"><a class="navbar__links" href="/restaurant/de/logout/"><i class="fas fa-sign-out-alt"></i> Logout</a></li>';} 
+                        echo '<li class="navbar__item"><a class="navbar__links" href="/restaurant/de/account/"><i class="fas fa-user"></i> Konto</a></li>';
+                        echo '<li class="navbar__item"><a class="navbar__links" href="/restaurant/de/logout/"><i class="fas fa-sign-out-alt"></i> Abmeldung</a></li>';} 
                     else 
                         {echo '<li class="navbar__item"><a class="navbar__links" href="/restaurant/de/anmeldung/"><i class="fas fa-sign-in-alt"></i> Anmeldung</a></li>';}
                     echo'
