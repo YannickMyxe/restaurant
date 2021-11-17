@@ -11,34 +11,17 @@
     <title>Bedankt | Multicultura</title>
     <link rel="stylesheet" href="../static/chat.css">
     <link rel="stylesheet" href="../static/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/menu.css">
-    <link rel="stylesheet" href="../css/map.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <?php
+        include '../php/loadCss.php'
+    ?>
     <link rel="icon" href="../img/logo.png">
 </head>
 <body>
 	<header>
-        <nav class="navbar">
-            <div class="navbar__container">
-                <a class="logo" href="./"><img src="../img/logo.png" alt="LOGO"></a>
-                <div class="navbar__toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-
-                <ul class="navbar__menu">
-                    <li class="navbar__item"><a class="navbar__links" href="../">Home</a></li>
-                    <li class="navbar__item"><a class="navbar__links current-page" href="../reservaties/">Reserveren</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="about/">About</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Project</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../contact/">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+    <?php
+        include '../php/isAdmin.php';
+        include '../php/loadNavBar.php';
+    ?>
     </header>
 	<main>
 	<div class="thank-you-message">

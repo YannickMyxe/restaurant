@@ -30,33 +30,19 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display&family=Roboto&display=swap" rel="stylesheet"> 
-
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="/style/nav.css">
-    <link rel="stylesheet" href="/style/main.css">
-    <link rel="stylesheet" href="/style/contact.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My messages</title>
+    <?php
+        include '../php/loadCss.php'
+    ?>
 </head>
 <body>
 <header>
-        <div class="navcontainer">
-            <div class="logo">
-                <img src="https://via.placeholder.com/120x50" alt="logo">
-                <a href="./">Home page</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/projects">Projects</a></li>
-                    <li><a href="/cv">CV</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/contact" class="current-page">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php
+        include '../php/isAdmin.php';
+        include '../php/loadNavBar.php';
+    ?>
+</header>
     <main>
         <h1>My messages</h1>
         <?php if (sizeof($items) > 0) { ?>
