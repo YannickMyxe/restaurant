@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
 	$username = isset($_GET['username']) ? $_GET['username'] : false;
 
 ?><!DOCTYPE html>
@@ -19,8 +19,7 @@
 <body>
 	<header>
     <?php
-        include '../../php/isAdmin.php';
-        include '../../php/loadNavBar.php';
+        include '../../php/loadNavBar_en.php';
     ?>
     </header>
 	<main>
