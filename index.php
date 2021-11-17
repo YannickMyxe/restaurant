@@ -29,7 +29,7 @@
             <h1>Restaurant Multicultura</h1>
             <div>
                 <p>
-                    Welkom bij restaurant Multicultura! Wij zijn gespesializeerd in het bereiden van gerechten uit meerdere culturen. Wij bereiden onze gerechten met de verste ingredienten van een lokale bedrijven.
+                    Welkom bij restaurant Multicultura! Wij zijn gespecializeerd in het bereiden van gerechten uit meerdere culturen. Wij bereiden onze gerechten met de verste ingrediënten van een lokale bedrijven.
                 </p>
             </div>
         </div>
@@ -152,7 +152,7 @@
         <section class="location">
             <h2>Locatie</h2>
             <div class="map-wrapper">
-                <p>Hier vind je ons adress. Zo kan je ons gemakkelijk vinden!</p>
+                <p>Hier vind je ons adres. Zo kan je ons gemakkelijk vinden!</p>
                 <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2299.513860969966!2d3.7087566727579064!3d51.05978203806784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3710281d9c345%3A0xc50bd6d3515ba4db!2sKU%20Leuven%20Technologiecampus%20Gent!5e0!3m2!1sen!2sbe!4v1632398621501!5m2!1sen!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> 
             </div>
         </section>
