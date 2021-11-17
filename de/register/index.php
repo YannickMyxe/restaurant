@@ -98,8 +98,7 @@ if (isset($_POST['btnSubmit'])) {
 <body>
     <header>
         <?php
-            include '../../php/isAdmin.php';
-            include '../../php/loadNavBar.php';
+            include '../../php/loadNavBar_de.php';
         ?>
     </header>
     <main>
@@ -130,7 +129,7 @@ if (isset($_POST['btnSubmit'])) {
                 </div>
                 <p>
                     <button type="submit" id="btnSubmit" name="btnSubmit" class="button btnlogin">Konto erstellen</button>
-                    <a href="../login/" class="button btnregistreer">Besitzen Sie bereits ein Kontot</a>
+                    <a href="../anmeldung/" class="button btnregistreer">Besitzen Sie bereits ein Kontot</a>
                 </p>
             </form>
         </div>

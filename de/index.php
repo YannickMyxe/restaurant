@@ -1,5 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,59 +8,18 @@
     <title>Startseite | Multicultura</title>
     <link rel="stylesheet" href="../static/chat.css">
     <link rel="stylesheet" href="../static/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <?php
+        include '../php/loadCss.php'
+    ?>
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/map.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <link rel="icon" href="../img/logo.png">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="navbar__container">
-                <a class="logo" href="./"><img src="../img/logo.png" alt="LOGO"></a>
-                <div class="navbar__toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-
-                <ul class="navbar__menu">
-                    <li class="navbar__item"><a class="navbar__links current-page" href="../de/">Startseite</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../de/Buchen">Buchung</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../de/uber/">Über</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant">Projekt</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="../../restaurant/de/Kontakt/">Kontakt</a></li>
-                    <li class="navbar__item"><a class="navbar__links" href="login/"><i class="fas fa-user-circle"></i> Anmeldung</a></li>
-                    <li class="navbar_item">
-                        <div class="drop-menu">
-                            <div class="selected-drop-item de">
-                                Deutsch
-                            </div>
-                            <ul>
-                                <li>
-                                    <a class="de" href="./">Deutsch</a>
-                                </li>
-
-                                <li>
-                                    <a class="en" href="../en/">Englisch</a>
-                                </li>
-
-                                <li>
-                                    <a class="fr" href="../fr/">Französisch</a>
-                                </li>
-
-                                <li>
-                                    <a class="ne" href="../">Niederländisch</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <?php
+        include '../php/loadNavBar_de.php';
+    ?>
     </header>
     <main>
         <div class="leftalign">

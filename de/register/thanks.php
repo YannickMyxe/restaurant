@@ -19,8 +19,7 @@
 <body>
 	<header>
     <?php
-        include '../../php/isAdmin.php';
-        include '../../php/loadNavBar.php';
+        include '../../php/loadNavBar_de.php';
     ?>
     </header>
 	<main>
