@@ -5,14 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Multicultura</title>
-    <link rel="stylesheet" href="../../static/chat.css">
-    <link rel="stylesheet" href="../../static/home.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/menu.css">
-    <link rel="stylesheet" href="../css/map.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <?php
+        include '../../php/loadCss.php'
+    ?>
     <link rel="icon" href="../../img/logo.png">
 </head>
 <body>

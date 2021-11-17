@@ -133,15 +133,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="../static/chat.css">
     <link rel="stylesheet" href="../static/home.css">
     <?php
-        include '../php/loadCss.php'
+        include '../../php/loadCss.php'
     ?>
     <link rel="icon" href="../img/logo.png">
 </head>
 <body>
 <header>
-    <?php
-        include '../php/isAdmin.php';
-        include '../php/loadNavBar.php';
+    <?php 
+        include '../../php/loadNavBar_fr.php';
     ?>
 </header>
     <main>
@@ -161,7 +160,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </div>
                 <p>
                     <button type="submit" id="btnSubmit" name="btnSubmit" class="button btnlogin">Connexion</button>
-                    <a href="../register/" class="button btnregistreer">Créer un compte</a>
+                    <a href="../registration/" class="button btnregistreer">Créer un compte</a>
                 </p>
             </form>
         </div>

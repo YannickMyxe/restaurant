@@ -15,9 +15,9 @@ echo '
                         <div class="drop-menu">
                             <div class="selected-drop-item"><i class="fas fa-question-circle"></i> Info <i class="fas fa-caret-down"></i></div>
                             <ul>
-                            <li class="navbar__item"><a class="navbar__links" href="/restaurant/about/"><i class="fas fa-info-circle"></i> About us</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="/restaurant/about/"><i class="fas fa-info-circle"></i> Over ons</a></li>
                             <li class="navbar__item"><a class="navbar__links" href="https://github.com/YannickMyxe/restaurant"><i class="fas fa-code"></i> Project info</a></li>
-                            <li class="navbar__item"><a class="navbar__links" href="/restaurant/contact/"><i class="far fa-comment-dots"></i> Contact us</a></li>
+                            <li class="navbar__item"><a class="navbar__links" href="/restaurant/contact/"><i class="far fa-comment-dots"></i> Contacteer ons</a></li>
                             </ul>
                         </div>
                     </li>';

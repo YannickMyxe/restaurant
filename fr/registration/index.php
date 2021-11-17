@@ -70,7 +70,7 @@ if (isset($_POST['btnSubmit'])) {
 
         // the query succeeded, redirect to this very same page
         if ($db->lastInsertId() !== 0) {
-            header('Location: bedankt_regestratie.php?username=' . urlencode($username));
+            header('Location: merci.php?username=' . urlencode($username));
             exit();
         } // the query failed
         else {
@@ -91,15 +91,14 @@ if (isset($_POST['btnSubmit'])) {
     <link rel="stylesheet" href="../static/chat.css">
     <link rel="stylesheet" href="../static/home.css">
     <?php
-        include '../php/loadCss.php'
+        include '../../php/loadCss.php'
     ?>
-    <link rel="icon" href="../img/logo.png">
+    <link rel="icon" href="../../img/logo.png">
 </head>
 <body>
     <header>
         <?php
-            include '../php/isAdmin.php';
-            include '../php/loadNavBar.php';
+            include '../../php/loadNavBar_fr.php';
         ?>
     </header>
     <main>

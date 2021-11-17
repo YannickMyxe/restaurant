@@ -12,15 +12,14 @@
     <link rel="stylesheet" href="../static/chat.css">
     <link rel="stylesheet" href="../static/home.css">
     <?php
-        include '../php/loadCss.php'
+        include '../../php/loadCss.php'
     ?>
     <link rel="icon" href="../img/logo.png">
 </head>
 <body>
 	<header>
     <?php
-        include '../php/isAdmin.php';
-        include '../php/loadNavBar.php';
+        include '../../php/loadNavBar_fr.php';
     ?>
     </header>
 	<main>
